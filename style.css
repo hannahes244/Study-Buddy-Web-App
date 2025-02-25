@@ -1,12 +1,18 @@
 nav {
     background-color: beige;
-    grid-area: head;
+    grid-area: nav;
     padding: 5px;
 }
-header {
-    background-color: skyblue;
-    grid-area: nav;
-    min-height: 200px;
+.blog-header {
+    position: relative;
+    padding: 10px 20px;
+    color: black;
+    cursor: pointer;
+    grid-area: head;
+    text-align: center;
+    font-family:"Monaco";
+    font-size: medium;
+    margin: 0px;
 
 }
 .container {
@@ -15,22 +21,20 @@ header {
     font-family:"Monaco";
     font-size: small;
 }
-article {
-    background-color: peachpuff;
-    grid-area: article;
-
-}
 footer {
     background-color: beige;
     grid-area: footer;
 
 }
 body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f4f4f4;
     display: grid;
-    grid-template-columns: 20% 80%;
     grid-template-areas: 
+    "nav nav"
     "head head"
-    "nav article"
+    "article article"
     "footer footer";
 }
 li {
@@ -78,4 +82,25 @@ title {
     background-color: pink;
     border: 2px;
     border-radius: 25px;
+}
+.blog-container {
+    max-width: 850px;
+    padding: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+    grid-area: article;
+    margin-top: 0;
+}
+.week {
+    flex: 1;
+    padding: 15px;
+    background: beige;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 300px;
+        
 }
