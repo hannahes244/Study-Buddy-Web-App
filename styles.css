@@ -1,0 +1,126 @@
+body {
+    font-family: "Raleway"; /*monaco*/
+}
+
+h1 {
+    font-size: 40px;
+    color: #444444;
+}
+
+.container {
+    margin: 5px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.signUpBoxes {
+    display: inline-block;
+    width: 400px;
+    margin: 4px;
+    text-align: center;
+    background-image: url("PopUpBox.png"); /**url(PopUpBox.png)**/
+    background-size: 800px;
+    background-repeat: none;
+}
+
+.signUpTitle {
+    font-size: 14px bold;
+    color: black;
+    margin-top: 70px;
+}
+
+.signUp {
+    border-spacing: 0px;
+    margin-left: 10%;
+}
+
+.signUpTd {
+    font-weight: normal;
+    color: #444444;
+    padding-top: 9px;
+    padding-bottom: 11px;
+    padding-left: 25px;
+    text-align: left;
+    border-bottom: 1px solid #e1dada;
+}
+
+#signUpButton {
+    margin-left: 35%;
+    background-color: peachpuff;
+    border-color: rgb(244, 184, 184);
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Raleway';
+}
+
+.signUpTd > button {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+label {
+    padding-right: 50px;
+    inline-size: 10%;
+    max-inline-size: 10%;
+}
+
+button {
+    margin-left: 40%;
+    background-color: peachpuff;
+    border-color: rgb(244, 184, 184);
+    border-radius: 5px;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Raleway';
+}
+
+.signIn > th {
+    font-size: 10px;
+    font-weight: bold;
+    color: #777777;
+    text-align: left;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.signInTd {
+    font-weight: normal;
+    color: #444444;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e1dada;
+}
+
+.signIn {
+    border-spacing: 0px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#signInButton {
+    margin-left: 35%;
+    font-size: 20px;
+    background-color: peachpuff;
+    border-color: rgb(244, 184, 184);
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Raleway';
+}
+
+.signInTd > button {
+    margin-top: -15px;
+    margin-bottom: -4px;
+}
+
+input {
+    border-color: pink;
+    border-radius: 5px;
+    border-width: 1px;
+    display: inline-block;
+}
