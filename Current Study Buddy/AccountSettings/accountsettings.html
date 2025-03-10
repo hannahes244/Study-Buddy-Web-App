@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Study Buddy DESU</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="asstyling.css">
+        <script src="asinteractions.js"></script>
+    </head>
+    <body>
+        <nav>
+            <div class="container">
+                <div class="box"><a href="">Homepage</a></div>
+                <div class="box"><a href="../Dashboard/dashboard.html">Dashboard</a></div>
+                <div class="box"><a href="../Leaderboard/leaderboard.html">Leaderboard</a></div>
+                <div class="box dropdown">
+                    Matches
+                    <div class="dropdown-content">
+                        <div><a href="../FindMatches/findmatches.html">Find A Match</a></div>
+                        <div><a href="../Requests/requests.html">Requests</a></div>
+                        <div><a href="../MyMatches/mymatches.html">My Matches</a></div>
+                    </div>
+                </div>
+                <div class="box"><a href="../Resources/resources.html">Resources</a></div>
+                <div class="box"><a href="../AccountSettings/accountsettings.html">Account Settings</a></div>
+                <div class="box">
+                    <img class="profilepic" src="../Images/profilepic.png" alt="Profile Picture"></div>
+            </div>
+        </nav>
+        <header>
+            <head>
+           Welcome to Study Buddy!</div>
+            </head>
+        </header>
+        <article>
+        
+            <div class="settingsContainer">
+		
+                <h1 id = "title"> Account Settings </h1> <!--Want to pre-fill the input fields with the user's previously saved information-->
+                <section class="offer">
+                    <h2 class="offer-title">Basic Information</h2>
+                    <div class="offer-contents">
+                        <table class = "bitable">
+                            <form target="_blank" method="GET">
+                                <tr id="biTr">
+                                    <td class="biTd1">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" name = "firstName" id = "firstName">
+                                    </td>
+        
+                                    <td class="biTd1">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" name = "lastName" id = "lastName">
+                                    </td>
+                                </tr>
+        
+                                <tr id="biTr">
+                                    <td class = "biTd">
+                                        <label for="age">Classification</label>
+                                        <select name="classification" id="classification">
+                                            <option value = "freshman">Freshman</option>
+                                            <option value = "sophomore">Sophomore</option>
+                                            <option value = "junior">Junior</option>
+                                            <option value = "senior">Senior</option>
+                                            <option value = "grad">Graduate</option>
+                                    </td>
+        
+                                    <td class = "biTd">
+                                        <label for="age">Gender</label>
+                                        <select name="classification" id="classification">
+                                            <option value = "male">Male</option>
+                                            <option value = "female">Female</option>
+                                            <option value = "nonbinary">Non-Binary</option>
+                                            <option value = "pnts">Prefer Not to Say</option>
+                                    </td>
+                                </tr>
+        
+                                <tr id="biTr">
+                                    <td class="biTd">
+                                        <label for="email">Email</label>
+                                        <input type="text" name="email" id="email">
+                                    </td>
+        
+                                    <td class="biTd">
+                                        <label for="phoneNumber">Phone Number</label>
+                                        <input type="text" name="phoneNumber" id="phoneNumber"> 
+                                    </td>
+                                </tr>
+        
+                            </form>
+                        </table>
+                    </div>
+                </section>
+                <section class="offer">
+                    <h2 class="offer-title">Matching Information</h2>
+                    <div class="offer-contents">
+                        <table class = "mitable">
+                            <form target="_blank" method="GET">
+                                <tr>
+                                    <td class="miTd">
+                                        <label for="profilePic">Profile Picture</label>
+                                        <input type="file" name = "profilePic" id = "profilePic" accept="image/*"> <!--change this to an image file-->
+                                        <!--<input type="submit" value="Upload Image">-->
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td class="miTd">
+                                        <label for="courses">Courses</label>
+                                        <input type="text" name = "courses" id = "courses"> <!--use the datalist tag-->
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td class="miTd">
+                                        <label for="bio">Bio</label>
+                                        <input type="text" name = "bio" id = "bio" placeholder="Tell us about you! What are your interests, activities, favorites?"> <!--use the datalist tag-->
+                                    </td>
+                                </tr>
+        
+                            </form>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        
+            <div id="sEButton">
+                <form target="_blank" method="GET">
+                    <button id="saveEdits" name="saveEdits">Save Edits</button>
+                </form>
+            </div>
+        
+        </article>
+        <!--<footer>
+            <div class="footer-container">
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+                <ul>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="https://github.com/hannahes244/Study-Buddy-Web-App">Source Code</a></li>
+                    <li><a href="https://github.com/users/hannahes244/projects/1">Product Backlog</a></li>
+                </ul>
+            </div>
+        </footer> -->
+    </body>
+
+</html>

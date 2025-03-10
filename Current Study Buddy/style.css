@@ -1,0 +1,106 @@
+nav {
+    background-color: beige;
+    grid-area: nav;
+    padding: 5px;
+}
+.blog-header {
+    position: relative;
+    padding: 10px 20px;
+    color: black;
+    cursor: pointer;
+    grid-area: head;
+    text-align: center;
+    font-family:"Monaco";
+    font-size: medium;
+    margin: 0px;
+
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    font-family:"Monaco";
+    font-size: small;
+}
+footer {
+    background-color: beige;
+    grid-area: footer;
+
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f4f4f4;
+    display: grid;
+    grid-template-areas: 
+    "nav nav"
+    "head head"
+    "article article"
+    "footer footer";
+}
+li {
+    list-style-type: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+title { 
+    font:100px;
+    background-color:green;
+    position:fixed;
+}
+.profilepic {
+    width: 25px;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: beige;
+    min-width: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+.dropdown-content div {
+    padding: 10px;
+    color: black;
+    white-space: nowrap;
+}
+.dropdown-content div:hover {
+    background-color: pink;
+}
+.box {
+    position: relative;
+    padding: 10px 20px;
+    color: black;
+    cursor: pointer;
+    
+}
+.box:hover {
+    background-color: pink;
+    border: 2px;
+    border-radius: 25px;
+}
+.blog-container {
+    max-width: 850px;
+    padding: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+    grid-area: article;
+    margin-top: 0;
+}
+.week {
+    flex: 1;
+    padding: 15px;
+    background: beige;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 300px;
+        
+}
