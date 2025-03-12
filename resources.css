@@ -11,8 +11,8 @@ h1 {
     text-align: center;
     margin: 5px;
     font-size: 13px;
-}
 
+}
 .offer {
     display: inline-block;
     position: absolute;
@@ -22,9 +22,22 @@ h1 {
     border: 1px solid red;
     left: 50%;
     transform: translate(-50%);
-    
-    
+    grid-area: article;
 }
+
+footer {
+
+    position: absolute;
+    background-color: beige;
+    grid-area: footer;
+    font-size: small;
+    font-family: "Arial";
+    grid-row:100;
+    height:100px;
+    width: 1000px;
+    bottom:0px;
+}
+
 .offer-title {
     font-size: 14px;
     font-weight: bold;
@@ -111,14 +124,12 @@ article {
     font-family:"Monaco";
     font-size: small;
 }
-footer {
-    background-color: beige;
-    grid-area: footer;
-    font-size: small;
-    font-family: "Arial";
-    grid-row: 40;
 
-}
+
+
+
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 40px;
