@@ -1,78 +1,123 @@
 html, body {
     width: 100%;
-    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
-    overflow-y: hidden;
+    overflow-x: hidden;
     margin-left: -40px;
     margin-top: -40px;
+    font-family: "Manrope", sans-serif;
 }
 
 a {
     color: black;
+    font-weight: bold;
     text-decoration: none;
 }
 
 nav {
-    background-color: beige;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.075) 0 1px;
     grid-area: nav;
-    padding: 5px;
+    padding: 10px;
+    position: fixed;
+    z-index: 10;
+    width: 99vw;
+    display: grid;
+    grid-template-areas: 
+    "sblogo container buttons accountimg";
 }
-header {
-    position: relative;
-    background-color: pink;
-    padding: 10px 20px;
-    color: black;
-    cursor: pointer;
-    grid-area: footer;
-    text-align: center;
-    font-family:"Monaco";
-    font-size: larger;
-    grid-row: 20;
+
+.sblogo {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    grid-area: sblogo;
 }
-article {
-    grid-row: 30;
-    margin-bottom: 20px;
-    margin-left: 120px;
-}
+
 .container {
     display: flex;
     justify-content: space-between;
-    font-family:"Monaco";
+    font-family:"Manrope";
     font-size: small;
-    min-width: 100%;
+    grid-area: container;
+    left: 150px;
+    position: fixed;
+}
 
+.container .box {
+    position: relative;
+    margin: 15px;
+    padding-top: 5px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
 }
-footer {
-    background-color: beige;
-    grid-area: footer;
-    font-size: small;
-    font-family: "Arial";
-    grid-row: 40;
 
+.accountimg {
+    grid-area: accountimg;
+    right: 0;
+    margin-right: 10px;
+    position: fixed;
 }
-body {
-    font-family: monaco, Arial, sans-serif;
-    margin: 40px;
-    background-color: #f4f4f4;
-    display: grid;
-    grid-template-areas: 
-    "nav nav"
-    "head head"
-    "article article"
-    "footer footer";
-}
-li {
-    list-style-type: none;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-title { 
-    font:100px;
-    background-color:green;
-    position:fixed;
-}
+
 .profilepic {
-    width: 25px;
+    width: 50px;
+    padding: none;
+    margin: none;
+    box-shadow: rgba(0, 0, 0, 0.075) -1px 0 0;
+    padding-left: 10px;
 }
+
+.pfpdropdown:hover .pfpdropdown-content {
+    display: block;
+    min-height: 40px;
+}
+
+.pfpdropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: beige;
+    min-width: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+    font-size: 13px;
+    height: 15px;
+    
+}
+
+.pfpdropdown-content div {
+    padding: 10px;
+    color: black;
+    white-space: nowrap;
+}
+.pfpdropdown-content div:hover {
+    background-color: rgb(242, 132, 130);
+}
+
+.pfpdropdown-content a:hover{
+    color: white;
+}
+
+a {
+    transition: all .5s ease-in-out;
+}
+
+strong {
+    transition: all .5s ease-in-out;
+}
+
+strong:hover {
+    color: rgb(242, 132, 130);
+}
+
+a:hover {
+    color: rgb(242, 132, 130);
+    border: 2px;
+    border-radius: 25px;
+    padding: 15px;
+}
+
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -92,26 +137,145 @@ title {
     white-space: nowrap;
 }
 .dropdown-content div:hover {
-    background-color: pink;
+    background-color: rgb(242, 132, 130);
 }
-.box {
+
+.dropdown-content a:hover{
+    color: white;
+}
+
+.buttons {
+    grid-area: buttons;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    justify-content: space-around;
+    gap: 10px;
+    position: fixed;
+    right: 90px;
+    top: 25px;
+}
+
+.asbutton button {
+    width: 75px;
+    height: 30px;
+    font-size: 13px;
+    font-family: "Manrope";
+    border-radius: 7px;
+    font-weight: bolder;
+}
+
+#signup {
+    background-color: rgb(242, 132, 130);
+    border: none;
+    color: white;
+    font-weight: bolder;
+    transition: all .5s ease-in-out;
+}
+
+#signin {
+    border:none;
+    background-color: transparent;
+}
+
+#signup:hover {
+    background-color: transparent;
+    border: rgb(242, 132, 130) solid 2px;
+    color: rgb(242, 132, 130);
+}
+
+#signin:hover {
+    color: rgb(242, 132, 130);
+}
+
+header {
     position: relative;
-    /*padding: 10px 20px;*/
-    padding-top: 10px;
-    padding-bottom: 5px;
-    padding-right: 10px;
-    padding-left: 10px;
-    color: black;
-    text-align: center;
+    background-color: rgb(242, 132, 130);
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
     cursor: pointer;
-    
+    grid-area: head;
+    text-align: center;
+    font-family:"Manrope";
+    font-size: larger;
+    grid-row: 20;
 }
-.box:hover {
-    background-color: pink;
-    border: 2px;
-    border-radius: 25px;
-    padding: 15px;
+
+
+
+
+article {
+    grid-row: 30;
+    margin-bottom: 20px;
+    margin-left: 38px;
+    width: 100vw;
+    justify-content: center;
 }
+
+
+footer {
+    background-color: rgb(242, 132, 130);
+    grid-area: footer;
+    font-family: "Manrope";
+    grid-row: 40;
+    margin-top: 200px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+footer a {
+    color: white;
+    font-size: 18px;;
+}
+
+.footer-container {
+    text-align: center;
+}
+
+footer a:hover{
+    border: rgb(242, 132, 130) 3px solid;
+    background-color: white;
+
+}
+
+.footer-container ul {
+    display: flex;
+    justify-content: space-evenly; 
+    gap: 50px;
+    list-style: none; 
+    padding: 50px; 
+    margin: 0; 
+    width: 98vw;
+}
+
+body {
+    font-family: Manrope;
+    margin: 40px;
+    background-color: rgb(247, 237, 226);
+    margin-bottom: 0px;
+    display: grid;
+    justify-content: center;
+    grid-template-areas: 
+    "nav nav"
+    "head head"
+    "article article"
+    "footer footer";
+}
+
+
+li {
+    list-style-type: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+title { 
+    font:100px;
+    background-color:green;
+    position:fixed;
+}
+
+
 .match {
     text-align: center;
     position: relative;
@@ -120,6 +284,7 @@ title {
     display: flex;
     justify-content: center;
 }
+
 .card {
     width: 875px;
     height: 400px;
@@ -131,6 +296,7 @@ title {
     margin-top: 20px;
     overflow: hidden;
 }
+
 .profile-pic {
     width: 30%;
     height: 100%;
@@ -195,15 +361,14 @@ title {
 
 
 
-
 h1 {
     font-size: 16px;
     color: #444444;
 }
 
 #title {
-    font-size: 30px;
-    color: rgb(167, 121, 128);
+    font-size: 45px;
+    color: rgb(242, 132, 130);
 }
 
 .settingsContainer {
@@ -211,86 +376,113 @@ h1 {
     text-align: center;
     font-size: 13px;
     margin-top: 60px;
+    margin-left: 0px;
+    margin-right: 50px;
+    width: 100vw;  
 }
 
-.offer {
-    display: inline-block;
-    width: 500px;
-    margin: 4px;
-    text-align: center;
-    border: rgb(167, 121, 128) 3px solid;
+.settingsInfo {
+    display: grid;
+    grid-template-areas: 
+    "mainInfo otherInfo";
+    justify-content: space-between;
+    gap: 30px;
+    width: 100vw;
+    justify-content: center;
+    
 }
 
-.offer-title {
-    font-size: 14px bold;
-    color: rgb(136, 98, 104);
-    background-color: pink;
-    margin: 0px;
-    padding: 15px;
-}
-
-.offer-contents {
-    padding: 20px;
-    background-color: beige;
-}
-
-table {
-    width: 100%;
-    background-color: rgb(249, 249, 243);
-    border-spacing: 0px;
-
-}
-
-th {
-    font-size: 12px;
-    font-weight: bold;
-    color: #777777;
-    padding: 10px;
-    margin: 0px;
-    text-align: left;
-    border-bottom: 15px solid #adabab;
-}
-
-td {
-    font-weight: lighter;
-    color: #444444;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 20px; 
+.mainInfo {
+    grid-area: mainInfo;
+    background-color: white;
+    padding-top: 20px;
     padding-bottom: 20px;
-    margin: 0px;
-    text-align: left;
-    border-bottom: 1px solid #f1f1f1;
+    border-radius: 20px;
+    box-shadow: -1px 2px 6px 2px rgb(233, 183, 182);
+    margin-right: 0px;
+    min-width: 400px;
+    max-width: 400px;
 }
 
-#bio {
-    width: 350px;
-    height: 50px;
+.otherInfo {
+    grid-area: otherInfo;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: -1px 2px 6px 2px rgb(233, 183, 182);
+    max-width: 400px;
+    min-width: 400px;
 }
 
-#biTr {
+input {
+    min-width: 300px;
+    min-height: 30px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: gray 1.5px solid;
+}
+
+.entryarea span {
+    font-size: 15px;
+    position: absolute;
+    left: 80;
+    margin-left: 20px;
+    background: white;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.entryarea {
     display: block;
 }
 
-label {
-    padding: 0px;
+select {
+    min-width: 325px;
+    min-height: 50px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: gray 1.5px solid;
+}
+
+.pfp {
+    min-width: 300px;
+    min-height: 40px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    border: gray 1.5px solid;
 }
 
 #saveEdits {
     text-align: center;
-    font-family: monaco;
-    font-size: 15px;
-    color: rgb(109, 79, 83);
-    background-color: pink;
-    border: solid 3px rgb(167, 121, 128);
+    font-family: "Manrope";
+    font-size: 20px;
+    color: rgb(242, 132, 130);
+    background-color: white;
+    border: rgb(242, 132, 130) 2px solid;
+    border-radius: 10px;
     margin-top: 10px;
-    padding: 7px;
+    padding: 10px;
+    padding-left: 15px; padding-right: 15px;
+    transition: all .5s ease-in-out;
 }
 
 #sEButton {
     text-align: center;
 }
 
+#saveEdits:hover {
+    background-color: rgb(242, 132, 130);
+    color: white;
+    border: transparent 2px solid;
+    transform: scale(1.1)
+}
+
 ::placeholder {
-    font-size: 12.5px;
+    font-size: 10.75px;
 }

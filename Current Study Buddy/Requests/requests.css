@@ -1,76 +1,121 @@
+/*NAV BAR CSS*/
 nav {
-    background-color: beige;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.075) 0 1px;
     grid-area: nav;
-    padding: 5px;
+    padding: 10px;
+    position: fixed;
+    z-index: 10;
+    width: 99vw;
+    display: grid;
+    grid-template-areas: 
+    "sblogo container buttons accountimg";
 }
 
-a {
-    color: black;
-    text-decoration: none;
+.sblogo {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    grid-area: sblogo;
 }
 
-html, body {
-    width: 100%;
-    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
-    overflow-y: hidden;
-    margin-left: -40px;
-    margin-top: -40px;
-}
-
-header {
-    position: relative;
-    background-color: pink;
-    padding: 10px 20px;
-    color: black;
-    cursor: pointer;
-    grid-area: footer;
-    text-align: center;
-    font-family:"Monaco";
-    font-size: larger;
-    grid-row: 20;
-}
-article {
-    grid-row: 30;
-    margin-bottom: 20px;
-}
 .container {
     display: flex;
     justify-content: space-between;
-    font-family:"Monaco";
+    font-family:"Manrope";
     font-size: small;
+    grid-area: container;
+    left: 150px;
+    position: fixed;
 }
-footer {
-    background-color: beige;
-    grid-area: footer;
-    font-size: small;
-    font-family: "Arial";
-    grid-row: 40;
 
+.container .box {
+    position: relative;
+    margin: 15px;
+    padding-top: 5px;
+    color: black;
+    text-align: center;
+    cursor: pointer;
 }
-body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    background-color: #f4f4f4;
-    display: grid;
-    grid-template-areas: 
-    "nav nav"
-    "head head"
-    "article article"
-    "footer footer";
+
+.accountimg {
+    grid-area: accountimg;
+    right: 0;
+    margin-right: 10px;
+    position: fixed;
 }
-li {
-    list-style-type: none;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-title { 
-    font:100px;
-    background-color:green;
-    position:fixed;
-}
+
+/*--------------------------------------------*/
+
 .profilepic {
-    width: 25px;
+    width: 50px;
+    padding: none;
+    margin: none;
+    box-shadow: rgba(0, 0, 0, 0.075) -1px 0 0;
+    padding-left: 10px;
 }
+
+.pfpdropdown:hover .pfpdropdown-content {
+    display: block;
+    min-height: 40px;
+}
+
+.pfpdropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: beige;
+    min-width: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+    font-size: 13px;
+    height: 15px;
+   
+}
+
+.pfpdropdown-content div {
+    padding: 10px;
+    color: black;
+    white-space: nowrap;
+}
+.pfpdropdown-content div:hover {
+    background-color: rgb(242, 132, 130);
+}
+
+.pfpdropdown-content a:hover{
+    color: white;
+}
+
+/*--------------------------------------------*/
+
+a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all .5s ease-in-out;
+}
+
+a:hover {
+    color: rgb(242, 132, 130);
+    border: 2px;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+/*--------------------------------------------*/
+
+strong {
+    transition: all .5s ease-in-out;
+}
+
+strong:hover {
+    color: rgb(242, 132, 130);
+}
+
+/*--------------------------------------------*/
+
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -90,97 +135,152 @@ title {
     white-space: nowrap;
 }
 .dropdown-content div:hover {
-    background-color: pink;
+    background-color: rgb(242, 132, 130);
 }
-.box {
-    position: relative;
-    padding: 10px 20px;
-    color: black;
-    cursor: pointer;
-    
+
+.dropdown-content a:hover{
+    color: white;
 }
-.box:hover {
-    background-color: pink;
-    border: 2px;
-    border-radius: 25px;
-}
-.match {
-    text-align: center;
-    position: relative;
-}
-.card-container{
-    display: flex;
-    justify-content: center;
-}
-.card {
-    width: 875px;
-    height: 400px;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+/*--------------------------------------------*/
+
+.buttons {
+    grid-area: buttons;
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
-    overflow: hidden;
+    background-color: transparent;
+    justify-content: space-around;
+    gap: 10px;
+    position: fixed;
+    right: 90px;
+    top: 25px;
 }
-.profile-pic {
-    width: 30%;
-    height: 100%;
-    object-fit: cover;
-    border: white;
-    border-radius: 10px;
+
+.asbutton button {
+    width: 75px;
+    height: 30px;
+    font-size: 13px;
+    font-family: "Manrope";
+    border-radius: 7px;
+    font-weight: bolder;
 }
-.user-info {
-    width: 60%; 
-    padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-.user-info h2 {
-    text-align: center;
-    margin: 0;
-    font-size: 24px;
-    grid-column: span 4;
-}
-.user-info p {
-    margin: 5px 0 0;
-    font-size: 18px;
-    color: grey;
-}
-.user-info p strong {
-    background-color: pink;
-    border: 50px;
-    border-radius: 5px;
-    position: relative;
-    padding: 10px 10px;
-}
-.classification, .interests, .availability {
-    background-color: pink;
-    padding: 5px;
-    border-radius: 5px;
-    text-align: center;
-}
-.buttons {
-    display: flex;
-    justify-content: space-between;
-}
-.btn {
-    width: 45%;
-    padding: 15px;
+
+/*--------------------------------------------*/
+
+#signup {
+    background-color: rgb(242, 132, 130);
     border: none;
-    border-radius: 5px;
-    font-size: 18px;
+    color: white;
+    font-weight: bolder;
+    transition: all .5s ease-in-out;
+}
+
+#signin {
+    border:none;
+    background-color: transparent;
+}
+
+#signup:hover {
+    background-color: transparent;
+    border: rgb(242, 132, 130) solid 2px;
+    color: rgb(242, 132, 130);
+}
+
+#signin:hover {
+    color: rgb(242, 132, 130);
+}
+
+/*--------------------------------------------*/
+
+header {
+    position: relative;
+    background-color: rgb(242, 132, 130);
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
     cursor: pointer;
+    grid-area: head;
+    text-align: center;
+    font-family:"Manrope";
+    font-size: larger;
+    grid-row: 20;
 }
-#match {
-    background-color: #4CAF50;
-    color: black;
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*BODY/ARTICLE CSS - EDIT THIS!!!! NOT THE OTHERS UNLESS ABSOLUTELY NECESSARY!!!! */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin-left: -40px;
+    margin-top: -40px;
+    font-family: "Manrope", sans-serif;
 }
-#nomatch {
-    background-color: #f44336;
-    color: black;
+
+body {
+    font-family: Manrope;
+    margin: 40px;
+    background-color: rgb(247, 237, 226);
+    margin-bottom: 0px;
+    display: grid;
+    justify-content: center;
+    grid-template-areas: 
+    "nav nav"
+    "head head"
+    "article article"
+    "footer footer";
 }
-#favorite {
-    background-color: pink;
-    color: black;
+
+article {
+    margin-bottom: 20px;
+    margin-left: 38px;
+    width: 100vw;
+    justify-content: center;
 }
+
+article div h1{
+    margin-top: 150px;
+    font-size: 60px;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*FOOTER CSS*/
+
+footer {
+    background-color: rgb(242, 132, 130);
+    grid-area: footer;
+    font-family: "Manrope";
+    grid-row: 40;
+    position: fixed;
+    bottom: 0px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+footer a {
+    color: white;
+    font-size: 18px;;
+}
+
+.footer-container {
+    text-align: center;
+}
+
+footer a:hover{
+    border: rgb(242, 132, 130) 3px solid;
+    background-color: white;
+}
+
+.footer-container ul {
+    display: flex; 
+    justify-content: space-evenly; 
+    gap: 50px; 
+    list-style: none;
+    padding: 50px; 
+    margin: 0; 
+    width: 98vw;
+}
+
+
