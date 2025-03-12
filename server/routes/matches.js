@@ -14,4 +14,10 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Get all matches
+router.get("/", async (req, res) => {
+  const matches = await Match.find();
+  res.json(matches);
+});
+
 module.exports = router;
