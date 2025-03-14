@@ -1,0 +1,110 @@
+/*FOOTER CSS*/
+
+footer {
+    background-color: rgb(242, 132, 130);
+    grid-area: footer;
+    font-family: "Manrope";
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+footer a {
+    color: white;
+    font-size: 15px;;
+}
+
+.footer-container {
+    text-align: center;
+}
+
+footer a:hover{
+    border: rgb(242, 132, 130) 3px solid;
+    background-color: white;
+    border-radius: 15px;
+    padding: 7px;
+}
+
+.footer-container ul {
+    display: flex; 
+    justify-content: space-evenly; 
+    gap: 50px; 
+    list-style: none;
+    padding: 20px; 
+    margin: 0; 
+    width: 98vw;
+}
+
+/*footer {
+    background-color: rgb(242, 132, 130);
+    grid-area: footer;
+    font-family: "Manrope";
+    position: absolute;
+    bottom: 0px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 1000px;
+}
+
+footer a {
+    color: white;
+    font-size: 18px;;
+}
+
+.footer-container {
+    text-align: center;
+}
+
+footer a:hover{
+    border: rgb(242, 132, 130) 3px solid;
+    background-color: white;
+}
+
+.footer-container ul {
+    display: flex; 
+    justify-content: space-evenly; 
+    gap: 50px; 
+    list-style: none;
+    padding: 50px; 
+    margin: 0; 
+    width: 98vw;
+}
+
+
+footer {
+    background-color: rgb(242, 132, 130);
+    grid-area: footer;
+    font-family: "Manrope";
+    grid-row: 40;
+    margin-top: 200px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: absolute;
+}
+
+footer a {
+    color: white;
+    font-size: 18px;;
+}
+
+.footer-container {
+    text-align: center;
+}
+
+footer a:hover{
+    border: rgb(242, 132, 130) 3px solid;
+    background-color: white;
+
+}
+
+.footer-container ul {
+    display: flex;
+    justify-content: space-evenly; 
+    gap: 50px;
+    list-style: none; 
+    padding: 50px; 
+    margin: 0; 
+    width: 98vw;
+}
+
+*/
