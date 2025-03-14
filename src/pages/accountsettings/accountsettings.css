@@ -1,197 +1,3 @@
-/* NAV BAR STYLING-----------------------------------------------------------*/
-
-a {
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-nav {
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.075) 0 1px;
-    grid-area: nav;
-    padding: 10px;
-    position: fixed;
-    z-index: 10;
-    width: 99vw;
-    display: grid;
-    grid-template-areas: 
-    "sblogo container buttons accountimg";
-}
-
-.sblogo {
-    width: 120px;
-    display: flex;
-    justify-content: space-between;
-    grid-area: sblogo;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    font-family:"Manrope";
-    font-size: small;
-    grid-area: container;
-    left: 150px;
-    position: fixed;
-}
-
-.container .box {
-    position: relative;
-    margin: 15px;
-    padding-top: 5px;
-    color: black;
-    text-align: center;
-    cursor: pointer;
-}
-
-.accountimg {
-    grid-area: accountimg;
-    right: 0;
-    margin-right: 10px;
-    position: fixed;
-}
-
-.profilepic {
-    width: 50px;
-    padding: none;
-    margin: none;
-    box-shadow: rgba(0, 0, 0, 0.075) -1px 0 0;
-    padding-left: 10px;
-}
-
-.pfpdropdown:hover .pfpdropdown-content {
-    display: block;
-    min-height: 40px;
-}
-
-.pfpdropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: beige;
-    min-width: 150px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    text-align: center;
-    font-size: 13px;
-    height: 15px;
-    
-}
-
-.pfpdropdown-content div {
-    padding: 10px;
-    color: black;
-    white-space: nowrap;
-}
-.pfpdropdown-content div:hover {
-    background-color: rgb(242, 132, 130);
-}
-
-.pfpdropdown-content a:hover{
-    color: white;
-}
-
-a {
-    transition: all .5s ease-in-out;
-}
-
-strong {
-    transition: all .5s ease-in-out;
-}
-
-strong:hover {
-    color: rgb(242, 132, 130);
-}
-
-a:hover {
-    color: rgb(242, 132, 130);
-    border: 2px;
-    border-radius: 25px;
-    padding: 15px;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: beige;
-    min-width: 150px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-}
-.dropdown-content div {
-    padding: 10px;
-    color: black;
-    white-space: nowrap;
-}
-.dropdown-content div:hover {
-    background-color: rgb(242, 132, 130);
-}
-
-.dropdown-content a:hover{
-    color: white;
-}
-
-.buttons {
-    grid-area: buttons;
-    display: flex;
-    flex-direction: row;
-    background-color: transparent;
-    justify-content: space-around;
-    gap: 10px;
-    position: fixed;
-    right: 90px;
-    top: 25px;
-}
-
-.asbutton button {
-    width: 75px;
-    height: 30px;
-    font-size: 13px;
-    font-family: "Manrope";
-    border-radius: 7px;
-    font-weight: bolder;
-}
-
-#signup {
-    background-color: rgb(242, 132, 130);
-    border: none;
-    color: white;
-    font-weight: bolder;
-    transition: all .5s ease-in-out;
-}
-
-#signin {
-    border:none;
-    background-color: transparent;
-}
-
-#signup:hover {
-    background-color: transparent;
-    border: rgb(242, 132, 130) solid 2px;
-    color: rgb(242, 132, 130);
-}
-
-#signin:hover {
-    color: rgb(242, 132, 130);
-}
-
-
-/* ACCOUNT SETTINGS/BODY BOX STYLING ---------------------------------------------------------*/
-html, body {
-    width: 100%;
-    overflow-x: hidden;
-    margin-left: -40px;
-    margin-top: -40px;
-    font-family: "Manrope", sans-serif;
-}
-
 article {
     grid-row: 30;
     margin-bottom: 20px;
@@ -233,12 +39,12 @@ body {
 .settingsInfo {
     display: grid;
     grid-template-areas: 
-    "mainInfo otherInfo";
+    "mainInfo otherInfo"
+    "sEButton sEButton";
     justify-content: space-between;
     gap: 30px;
     width: 100vw;
     justify-content: center;
-    
 }
 
 .mainInfo {
@@ -296,7 +102,7 @@ select {
     border: gray 1.5px solid;
 }
 
-.pfp {
+input[name="profilePic"] {
     min-width: 300px;
     min-height: 40px;
     padding: 10px;
@@ -323,6 +129,8 @@ select {
 
 #sEButton {
     text-align: center;
+    width: 100%;
+    grid-area: sEButton;
 }
 
 #saveEdits:hover {
@@ -334,41 +142,4 @@ select {
 
 ::placeholder {
     font-size: 10.75px;
-}
-
-/* FOOTER STYLING----------------------------------------------------------------------------------*/
-
-footer {
-    background-color: rgb(242, 132, 130);
-    grid-area: footer;
-    font-family: "Manrope";
-    grid-row: 40;
-    margin-top: 200px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
-
-footer a {
-    color: white;
-    font-size: 18px;;
-}
-
-.footer-container {
-    text-align: center;
-}
-
-footer a:hover{
-    border: rgb(242, 132, 130) 3px solid;
-    background-color: white;
-
-}
-
-.footer-container ul {
-    display: flex;
-    justify-content: space-evenly; 
-    gap: 50px;
-    list-style: none; 
-    padding: 50px; 
-    margin: 0; 
-    width: 98vw;
 }

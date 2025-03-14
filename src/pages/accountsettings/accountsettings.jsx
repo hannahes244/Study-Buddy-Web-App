@@ -28,7 +28,7 @@ const AccountSettings = () => {
 
   return (
     <article className="settingsContainer">
-      <h1 id="title">Account Settings</h1>
+      <h1 id="astitle">Account Settings</h1>
 
       <form onSubmit={handleSubmit} className="settingsInfo">
         <div className="mainInfo">
@@ -66,7 +66,7 @@ const AccountSettings = () => {
 
           <div className="entryarea">
             <span>Bio</span>
-            <input type="text" name="bio" placeholder="Tell us about you!" value={formData.bio} onChange={handleChange} required />
+            <input type="text" name="bio" placeholder="Tell us about you! What are your interests, activities, favorites?" value={formData.bio} onChange={handleChange} required />
           </div>
         </div>
 

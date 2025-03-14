@@ -2,6 +2,7 @@ import React from "react";
 import "./navbar.css";
 import sblogo from "../../assets/sblogo.png";
 import profilepic from "../../assets/profilepic.png";
+import { Link } from "react-router-dom";
 
 
 const NavBar = () => {
@@ -13,24 +14,24 @@ const NavBar = () => {
 
       <div className="container">
         <div className="box">
-          <a href="../Dashboard/dashboard.html">DASHBOARD</a>
+          <Link to="/dashboard">DASHBOARD</Link>
         </div>
         <div className="box dropdown">
           <strong>MATCHES</strong>
           <div className="dropdown-content">
             <div>
-              <a href="../FindMatches/findmatches.html">Find A Match</a>
+              <Link to="/findmatches">Find Matches</Link>
             </div>
             <div>
-              <a href="../Requests/requests.html">Requests</a>
+              <Link to="/requests">Requests</Link>
             </div>
             <div>
-              <a href="../MyMatches/mymatches.html">My Matches</a>
+              <Link to="/mymatches">My Matches</Link>
             </div>
           </div>
         </div>
         <div className="box">
-          <a href="../Resources/resources.html">RESOURCES</a>
+          <Link to="/resources">RESOURCES</Link>
         </div>
       </div>
 
@@ -48,7 +49,7 @@ const NavBar = () => {
           <img className="profilepic" src={profilepic} alt="Profile Pic" />
           <div className="pfpdropdown-content">
             <div>
-              <a href="../AccountSettings/accountsettings.html">Profile Settings</a>
+              <Link to="/accountsettings">Profile Settings</Link>
             </div>
           </div>
         </div>

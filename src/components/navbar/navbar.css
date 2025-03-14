@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
 /*NAV BAR CSS*/
 nav {
     background-color: white;
@@ -5,6 +7,8 @@ nav {
     grid-area: nav;
     padding: 10px;
     position: fixed;
+    left: 0;
+    top: 0;
     z-index: 10;
     width: 99vw;
     display: grid;
@@ -90,6 +94,14 @@ nav {
 
 /*--------------------------------------------*/
 
+Link {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all .5s ease-in-out;
+}
+
+
 a {
     color: black;
     font-weight: bold;
@@ -103,6 +115,14 @@ a:hover {
     border-radius: 25px;
     padding: 15px;
 }
+
+Link:hover {
+    color: rgb(242, 132, 130);
+    border: 2px;
+    border-radius: 25px;
+    padding: 15px;
+}
+
 
 /*--------------------------------------------*/
 
