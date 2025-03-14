@@ -1,0 +1,145 @@
+article {
+    grid-row: 30;
+    margin-bottom: 20px;
+    margin-left: 38px;
+    width: 100vw;
+    justify-content: center;
+}
+
+body {
+    font-family: Manrope;
+    margin: 40px;
+    background-color: rgb(247, 237, 226);
+    margin-bottom: 0px;
+    display: grid;
+    justify-content: center;
+    grid-template-areas: 
+    "nav nav"
+    "head head"
+    "article article"
+    "footer footer";
+}
+
+#astitle {
+    font-size: 45px;
+    font-weight: normal;
+    color: rgb(242, 132, 130);
+}
+
+.settingsContainer {
+    margin: 5px;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 100px;
+    margin-left: 0px;
+    margin-right: 50px;
+    width: 100vw;  
+}
+
+.settingsInfo {
+    display: grid;
+    grid-template-areas: 
+    "mainInfo otherInfo"
+    "sEButton sEButton";
+    justify-content: space-between;
+    gap: 30px;
+    width: 100vw;
+    justify-content: center;
+}
+
+.mainInfo {
+    grid-area: mainInfo;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: -1px 2px 6px 2px rgb(233, 183, 182);
+    margin-right: 0px;
+    min-width: 400px;
+    max-width: 400px;
+}
+
+.otherInfo {
+    grid-area: otherInfo;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: -1px 2px 6px 2px rgb(233, 183, 182);
+    max-width: 400px;
+    min-width: 400px;
+}
+
+input {
+    min-width: 300px;
+    min-height: 30px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: gray 1.5px solid;
+}
+
+.entryarea span {
+    font-size: 15px;
+    position: absolute;
+    left: 80;
+    margin-left: 20px;
+    background: white;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.entryarea {
+    display: block;
+}
+
+select {
+    min-width: 325px;
+    min-height: 50px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: gray 1.5px solid;
+}
+
+input[name="profilePic"] {
+    min-width: 300px;
+    min-height: 40px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    border: gray 1.5px solid;
+}
+
+#saveEdits {
+    text-align: center;
+    font-family: "Manrope";
+    font-size: 20px;
+    color: rgb(242, 132, 130);
+    background-color: white;
+    border: rgb(242, 132, 130) 2px solid;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    padding-left: 15px; padding-right: 15px;
+    transition: all .5s ease-in-out;
+}
+
+#sEButton {
+    text-align: center;
+    width: 100%;
+    grid-area: sEButton;
+}
+
+#saveEdits:hover {
+    background-color: rgb(242, 132, 130);
+    color: white;
+    border: transparent 2px solid;
+    transform: scale(1.1)
+}
+
+::placeholder {
+    font-size: 10.75px;
+}
