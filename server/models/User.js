@@ -5,6 +5,7 @@ const UserSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true }, // Store hashed password
   bio: String,
+  profileImage: { type: String, default: "https://default-image-url.com/default.jpg" }, // TODO: Add default image
   classes: [{ type: mongoose.Schema.Types.ObjectId, ref: "Class" }], // References classes
   availability: [
     {
