@@ -3,7 +3,7 @@ import "./mymatches.css"
 
 const MyMatches = () => {
     return (
-        <article>
+        <article className="mMArticle">
             <div>
                 <h1>MM: Insert Page Elements Here!</h1>
             </div>
