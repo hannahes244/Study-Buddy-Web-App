@@ -11,23 +11,18 @@ body {
     margin: 40px;
     background-color: rgb(247, 237, 226);
     margin-bottom: 0px;
-    display: grid;
     justify-content: center;
-    grid-template-areas: 
-    "nav nav"
-    "head head"
-    "article article"
-    "footer footer";
 }
 
-article {
+.resourcesArticle {
     margin-bottom: 20px;
     margin-left: 38px;
     width: 100vw;
     justify-content: center;
+    height: 100vh;
 }
 
-article div h1{
+.resourcesArticle div h1{
     margin-top: 150px;
     font-size: 60px;
 }

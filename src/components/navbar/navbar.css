@@ -59,6 +59,10 @@ nav {
     padding-left: 10px;
 }
 
+.profilepic:hover{
+    box-shadow: rgba(0, 0, 0, 0.075) -1px 0 0;
+}
+
 .pfpdropdown:hover .pfpdropdown-content {
     display: block;
     min-height: 40px;

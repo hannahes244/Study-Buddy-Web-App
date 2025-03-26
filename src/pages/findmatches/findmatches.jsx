@@ -3,7 +3,7 @@ import "./findmatches.css"
 
 const FindMatches = () => {
     return (
-        <article>
+        <article className="fMArticle">
             <div>
                 <h1>FM: Insert Page Elements Here!</h1>
             </div>

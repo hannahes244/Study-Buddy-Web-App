@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./accountsettings.css"
+import defaultprofilepic from "../../assets/defaultPfP.png";
 
 const AccountSettings = () => {
   const [formData, setFormData] = useState({
@@ -7,9 +8,11 @@ const AccountSettings = () => {
     lastName: "",
     phonenum: "",
     email: "",
+    classfication: "",
     courses: "",
     profilePic: null,
     bio: "",
+    instagram: ""
   });
 
   // Handle Input Changes
@@ -25,6 +28,26 @@ const AccountSettings = () => {
     e.preventDefault();
     console.log("Saved Data:", formData);
   };
+
+  const [image, setImage] = useState(null);  // state to hold the image
+
+  // Load the saved profile picture from localStorage when the component mounts
+  useEffect(() => {
+    const savedImage = localStorage.getItem('profilePic');
+    if (savedImage) {
+      setImage(savedImage); // If there's a saved image, set it to state
+    }
+  }, []);
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file); // Create a temporary URL for the image
+      setImage(imageUrl); // Set the image URL in state
+      localStorage.setItem('profilePic', imageUrl); // Store the image URL in localStorage
+    }
+  };
+
 
   return (
     <article className="settingsContainer">
@@ -56,18 +79,46 @@ const AccountSettings = () => {
             <span>Courses</span>
             <input type="text" name="courses" value={formData.courses} onChange={handleChange} required />
           </div>
+
+          <div className="entryarea">
+            <span>Classification</span>
+            <input type="text" name="classification" value={formData.classification} onChange={handleChange} required />
+          </div>
+
         </div>
 
         <div className="otherInfo">
           <div className="entryarea">
-            <span>Profile Picture</span>
-            <input type="file" name="profilePic" accept="image/*" onChange={handleChange} />
+            <span className="aspfpSpan">Edit Profile Picture</span>
+
+              <input type="file"
+              name="profilePicUpload"
+              accept="image/*"
+              onChange={handleImageChange}
+              className="asProfileUpload" 
+              id="profilePicUpload"
+              />
+
+              <label htmlFor="profilePicUpload">
+
+                  <div className="asProfilePic">
+
+                  <img src={image || defaultprofilepic} alt="Profile" className="asprofile-image" />
+
+                  </div>
+              </label>
           </div>
 
           <div className="entryarea">
             <span>Bio</span>
             <input type="text" name="bio" placeholder="Tell us about you! What are your interests, activities, favorites?" value={formData.bio} onChange={handleChange} required />
           </div>
+
+          <div className="entryarea">
+            <span>Instagram</span>
+            <input type="text" name="instagram" value={formData.instagram} onChange={handleChange} required />
+          </div>
+          
         </div>
 
         <div id="sEButton">
@@ -79,5 +130,7 @@ const AccountSettings = () => {
     </article>
   );
 };
+
+/* Add in autocomplete for courses and classification */
 
 export default AccountSettings;

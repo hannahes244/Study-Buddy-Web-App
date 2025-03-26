@@ -4,9 +4,13 @@ footer {
     background-color: rgb(242, 132, 130);
     grid-area: footer;
     font-family: "Manrope";
-    position: absolute;
+    /*position: flow;*/
     bottom: 0px;
     right: 0px;
+    height: 62px;
+    /*display: flex
+    justify-content: center;*/
+    width: 100vw;
 }
 
 footer a {
