@@ -1,5 +1,22 @@
-WILL NOT WORK UNLESS INSTALL ALL BELOW:
-- NPM INSTALL
-- REACT-ROUTER-DOM
-- REACT POPUP
-- NPM INSTALL REACT-CONFETTI
+Here are a few important commands to run before successfully loading the project.
+Make sure you do these in your directory.
+
+NODE (Functionality)
+npm install
+------------------------------------------
+REACT ROUTER DOM (Visibility Capability)
+npm install react-router-dom
+------------------------------------------
+REACT POPUPS (Pop-Up Messages)
+npm install reactjs-popup
+------------------------------------------
+CONFETTI (Styling and Effects)
+npm install react-confetti
+------------------------------------------
+REACT-SPRING (Swiping/Mouse Effects)
+
+# Install the entire library
+npm install react-spring
+
+# or just install your specific target (recommended)
+npm install @react-spring/web
