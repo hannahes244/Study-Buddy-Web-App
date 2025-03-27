@@ -1,10 +1,9 @@
 const express = require('express');
-const http = require('http');
 const mysql = require('mysql2');
+const cors = require('cors');
 
 
 const app = express();
-const server = http.createServer(app);
 
 const db = mysql.createConnection({
     host: process.env.DB_HOST || 'localhost',
@@ -21,6 +20,7 @@ db.connect((err) => {
     console.log('Connected to MySQL database');
 });
 
+app.use(cors())
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -38,6 +38,6 @@ app.get('/api/students', (req, res) => {
 });
 
 const port = process.env.PORT || 8080;
-server.listen(port, () => {
+app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
