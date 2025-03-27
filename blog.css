@@ -1,0 +1,80 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin-left: -40px;
+    margin-top: -40px;
+    font-family: "Manrope", sans-serif;
+}
+
+h1{
+    text-align: center;
+    color: pink;
+    font-size: 60px;
+    
+}
+
+body {
+    font-family: Manrope;
+    margin: 40px;
+    background-color: rgb(247, 237, 226);
+    margin-bottom: 0px;
+    display: grid;
+    justify-content: center;
+    grid-template-areas: 
+    "nav nav"
+    "head head"
+    "article article"
+    "footer footer";
+}
+
+article {
+    margin-bottom: 20px;
+    margin-left: 38px;
+    margin-top: 100px;
+    width: 100vw;
+    justify-content: center;
+}
+
+article div h1{
+    margin-top: 150px;
+    font-size: 60px;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 20px; /* Increased gap for larger boxes */
+    width: 90%; /* Increased width for larger boxes */
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .flex-item {
+    flex: 1 0 calc(50% - 50px); /* Adjusted for 4 columns */
+    max-width: calc(50% - 50px); /* Ensure equal size */
+    border: 5px pink;
+    background-color:#f5cac3;
+    padding: 10px;
+    border-radius: 10px; 
+    box-sizing: border-box;
+    
+  }
+
+  .blogtextinfo {
+    font-size: 20px;
+
+    color:black;
+  }
+  
+
+.grid-item {
+    border: solid 1px black;
+    width: 20%;
+    height: 20%;
+    margin: 10px;
+}
