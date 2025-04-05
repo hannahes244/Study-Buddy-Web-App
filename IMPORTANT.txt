@@ -20,3 +20,6 @@ npm install react-spring
 
 # or just install your specific target (recommended)
 npm install @react-spring/web
+------------------------------------------
+CORS (Connects Back-end to Front-End)
+npm install cors 
