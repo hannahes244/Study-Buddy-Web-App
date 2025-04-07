@@ -103,7 +103,7 @@ const AccountSettings = () => {
 
                   <div className="asProfilePic">
 
-                  <img src={image || defaultprofilepic} alt="Profile" className="asprofile-image" />
+                  <img src={image || defaultprofilepic} alt="Profile" className="asprofile-image" placeholder={defaultprofilepic}/>
 
                   </div>
               </label>
@@ -122,7 +122,7 @@ const AccountSettings = () => {
         </div>
 
         <div id="sEButton">
-          <button type="submit" id="saveEdits">
+          <button type="submit" id="saveEdits" onSubmit={handleSubmit}>
             Save Edits
           </button>
         </div>

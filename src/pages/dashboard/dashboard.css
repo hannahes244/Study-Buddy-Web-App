@@ -60,12 +60,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    width: 80vw;
+    height: 85vh;
+    margin-top: 150px;
 }
 
 .dbMatchBox {
     width: 53vw; /*(900px; 55vw;*/ /*height: 60vh; /*550px; 60vh;*/
     aspect-ratio: 53/30;
-    position: relative;
+    position: absolute;
+    top: 50px;
+    left: 15%;
     text-align: center;
     border-radius: 30px;
     box-shadow: -1px 2px 6px 2px #ecd5b0;
@@ -89,19 +95,69 @@ body {
 
 .dbMatchInfo {
     grid-area: infobox;
-    background-color: red;
     height: 100%;
-    width: 90%;
-    margin-top: 100px;
+    width: 100%;
+    background-color: transparent;
+    margin-top: 40px;
+    margin-left: -40px;
     text-align: left;
     position: absolute;
-    /*margin-left: 100px;*/
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    gap: 15px;
 }
 
 .dbTitle {
     font-weight: bold;
+    font-size: 100%;
     padding: 10px;
+    margin-left: -15px;
+    margin-top: -10px;
 }
+
+.dbBio {
+    background-color: transparent;
+    width: 100%;
+}
+
+.dbBioInfo {
+    font-size: 85%;
+}
+
+.dbCourses {
+    background-color: transparent;
+}
+.dbCoursesInfo {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.dbListElements {
+    border: solid 1px rgb(184, 184, 184);
+    border-radius: 13px;
+    font-size: 85%;
+    width: fit-content;
+    padding: 6px;
+    background-color: rgb(253, 246, 220);
+}
+
+.dbInterests {
+    background-color: transparent;
+}
+
+.dbInterestsInfo {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
 
 .dbCurrentMatch { /*sizing - everything is just gonna be set for now, I'll come back to making it responsive later*/
     width: 38%;
@@ -156,6 +212,13 @@ body {
 
 }
 
+.hidden {
+    /*opacity: 0;*/
+    display: none;
+    transform: scale(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* Prevent interactions */
+}
 
 /* Mobile responsive code for screens under 800px
 
