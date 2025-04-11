@@ -1,20 +1,3 @@
-html, body {
-    width: 100%;
-    overflow-x: hidden;
-    margin-left: -40px;
-    margin-top: -40px;
-    font-family: "Manrope", sans-serif;
-}
-
-body {
-    font-family: Manrope;
-    background-color: rgb(247, 237, 226);
-    margin-bottom: 0px;
-    width: 100vw;
-    justify-content: center; /*vertical centering*/
-}
-
-
 .dbMatchBoxBackground {
     background-image: url("../../assets/backgroundimg5.jpeg");
     width: 77vw;
@@ -50,28 +33,26 @@ body {
 .dbMatchRequests  {
     padding: 10%;
     display: flex; /* use flex row*/
+    flex-direction: column;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     height: 88vh;
 }
 
 .dbMatchBoxContainer {
-    grid-area: matches;
     display: flex;
+    flex-direction: row; /* <-- side by side */
+    gap: 2rem; /* space between columns */
     justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 80vw;
-    height: 85vh;
-    margin-top: 150px;
+    align-items: flex-start;
 }
+
 
 .dbMatchBox {
     width: 53vw; /*(900px; 55vw;*/ /*height: 60vh; /*550px; 60vh;*/
     aspect-ratio: 53/30;
-    position: absolute;
-    top: 50px;
-    left: 15%;
+    position: relative;
     text-align: center;
     border-radius: 30px;
     box-shadow: -1px 2px 6px 2px #ecd5b0;
@@ -128,6 +109,25 @@ body {
 .dbCourses {
     background-color: transparent;
 }
+
+.dbCurrentMatch { /*sizing - everything is just gonna be set for now, I'll come back to making it responsive later*/
+    width: 38%;
+    top: 5%;
+    left: 3.5%;
+    position: absolute;
+    border: 3px gray solid;
+    border-radius: 20px;
+}
+
+.dbMatchName {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    z-index: 10;
+    font-size: 2vw;
+    bottom: 7%;
+    left: 4.5%;
+}
 .dbCoursesInfo {
     margin-left: 20px;
     display: flex;
@@ -158,35 +158,6 @@ body {
     flex-wrap: wrap;
 }
 
-
-.dbCurrentMatch { /*sizing - everything is just gonna be set for now, I'll come back to making it responsive later*/
-    width: 38%;
-    top: 5%;
-    left: 3.5%;
-    position: absolute;
-    border: 3px gray solid;
-    border-radius: 20px;
-}
-
-.dbMatchName {
-    color: white;
-    font-weight: bold;
-    position: absolute;
-    z-index: 10;
-    font-size: 2vw;
-    bottom: 7%;
-    left: 4.5%;
-}
-
-.dbMatchYear {
-    color: white;
-    position: absolute;
-    z-index: 10;
-    font-size: 1vw;
-    bottom: 5%;
-    left: 6%;
-}
-
 .dbButtons {
     grid-area: buttons;
     background-color: transparent;
@@ -202,7 +173,6 @@ body {
     height: 10%;
     width: 10%;
     margin-right: 2%;
-
 }
 
 .dbnoButton {
@@ -212,6 +182,14 @@ body {
 
 }
 
+.dbMatchYear {
+    color: white;
+    position: absolute;
+    z-index: 10;
+    font-size: 1vw;
+    bottom: 5%;
+    left: 6%;
+}
 .hidden {
     /*opacity: 0;*/
     display: none;
@@ -220,19 +198,101 @@ body {
     pointer-events: none; /* Prevent interactions */
 }
 
-/* Mobile responsive code for screens under 800px
+.dbMatchRequestItem {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-@media only screen and (max-width: 800px){
-    .dbContainer {
-        width: 100vw;
-        min-height: 100vh;
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        grid-template-areas:
-        "requests matches";
-        grid-template-columns: 25% 75%;
-        justify-content: space-between;
-        gap: 40px;
-    } 
-}*/
+.dbRequestButtons {
+    gap: 10px;
+    display: flex; 
+    justify-content: center
+}
+
+.acceptButton, .declineButton {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.acceptButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.declineButton {
+    background-color: #f44336;
+    color: white;
+}
+/* Popup container */
+.reqspopup-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reqspopupBox {
+    background-color: #f5cac3;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.reqspopup-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.reqspopupBox h2 {
+    margin: 0;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.closePopupButton {
+    background-color: #d8a796;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.closePopupButton:hover {
+    background-color: #c99685;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+  
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
