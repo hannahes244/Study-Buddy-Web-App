@@ -32,8 +32,6 @@ const Resources = () => {
                 <td>Dsu Hub:</td>
                 <td><a href="https://www.desu.edu/news/2022/08/university-launches-all-inclusive-campus-app-dsu-hub">  Campus Hub</a></td>
               </tr>
-              <tr>
-              </tr>
             </tbody>
             </table>
         </div>
