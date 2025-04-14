@@ -1,0 +1,113 @@
+/* AboutUs.css */
+
+/* ==================== */
+/* Main Container       */
+/* ==================== */
+.about-us-container {
+  padding: 20px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+  
+}
+
+/* ==================== */
+/* Team Section         */
+/* ==================== */
+.team-section {
+  font-size: large;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 70px;
+}
+
+/* ==================== */
+/* Team Members Container */
+/* (Holds individual team member divs) */
+/* ==================== */
+.team-members {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* ==================== */
+/* Individual Team Member */
+/* (Contains image and description) */
+/* ==================== */
+.team-member {
+  width: 200px;
+  text-align: center;
+}
+
+/* ==================== */
+/* Team Member Image    */
+/* ==================== */
+.team-member img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+
+/*Problem statement/////////////////////////////////////*/
+
+/* ==================== */
+/* Other Info Section   */
+/* ==================== */
+.other-info-section {
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* ==================== */
+/* Other Info Section Title */
+/* ==================== */
+.other-info-section h2 {
+  text-align: center;
+}
+
+
+/* ////////////user stories ///////////////////////////////////////////
+/*/
+.User\ Stories { 
+  padding: 20px;
+  margin-top: 30px; /* Adjust spacing from previous section if needed */
+  font-family: sans-serif;
+  text-align: left;
+}
+
+.User\ Stories h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ========================= */
+/* User Stories List         */
+/* ========================= */
+.User\ Stories ul { /* Style the unordered list */
+  list-style-type: square; /* Set the bullet point style to square */
+  padding-left: 20px; /* Add some indentation for the list items */
+}
+
+/* ========================= */
+/* List Items              */
+/* ========================= */
+.User\ Stories li { /* Style individual list items */
+  margin-bottom: 10px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  word-spacing: 100px;
+
+
+}
+
+/* ========================= */
+/* Paragraphs within List    */
+/* ========================= */
+.User\ Stories ul p { /* Style the <p> tags inside the <ul> */
+  margin-top: 15px; /* Add top margin to separate paragraphs */
+  margin-bottom: 5px; /* Add bottom margin to separate from list items */
+  font-weight: bold; /* Make the "As a new user:" and "new" text bold */
+}

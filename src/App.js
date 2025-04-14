@@ -8,8 +8,8 @@ import FindMatches from "./pages/findmatches/findmatches";
 import Requests from "./pages/requests/requests";
 import MyMatches from "./pages/mymatches/mymatches";
 import Resources from "./pages/resources/resources";
-
-
+import Blog from "./pages/blog/blog";
+import About from "./components/footer/about/about";
 function App() {
   return (
     <Router>
@@ -24,6 +24,8 @@ function App() {
         <Route path="/mymatches" element={<MyMatches />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/accountsettings" element={<AccountSettings />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
 
       <Footer />
