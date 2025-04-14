@@ -1,14 +1,10 @@
 import React from 'react';
 import './matchcard.css';
 import PropTypes from 'prop-types';
-import no from "../../assets/no.png"
-import yes from "../../assets/yes.png"
 import { motion, useMotionValue, useTransform, useTranslate, useAnimation} from 'framer-motion';
 import { useState} from 'react';
 // Needed to install npm install prop-types to use this
 // Need to install npm install motion
-
-
 
 const MatchCard = ({id, name, classification, matchimage, bio, courses, interests, index, totalcards, removeCard}) => {
 
@@ -118,7 +114,7 @@ MatchCard.propTypes = {
     courses: PropTypes.arrayOf(PropTypes.string).isRequired,
     interests: PropTypes.arrayOf(PropTypes.string).isRequired,
     index: PropTypes.number.isRequired,
-    totalCards: PropTypes.number.isRequired,
+    totalards: PropTypes.number.isRequired,
 }
 
 export default MatchCard;
