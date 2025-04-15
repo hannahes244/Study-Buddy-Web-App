@@ -2,7 +2,7 @@ import express from "express";
 import bcrypt from "bcryptjs";
 import multer from "multer";
 import imagekit from "../utils/imagekit.js";
-import { authenticateToken } from "../midware/authenticateToken.js";
+import { authenticateToken, authorizeRoles } from "../midware/authenticateToken.js";
 import Educator from "../models/educator.js";
 import Student from "../models/student.js";
 import { Op } from "sequelize";
@@ -19,6 +19,7 @@ const upload = multer({
 router.put(
   "/accountsettings",
   authenticateToken,
+  authorizeRoles("student", "educator"),
   upload.single("profileImage"),
   async (req, res) => {
     const {
@@ -29,13 +30,14 @@ router.put(
       last_name,
       description,
       phone_number,
-      profileImage
+      profileImageURL
     } = req.body;
 
     try {
-      const isStudent = req.user.type === "student";
+      const isStudent = req.user.role === "student";
       const model = isStudent ? Student : Educator;
 
+      console.log("Decoded user:", req.user);
       const user = await model.findByPk(req.user.id);
       if (!user) return res.status(404).json({ message: "User not found" });
 
@@ -55,7 +57,7 @@ router.put(
           return res.status(400).json({ message: "Username already in use" });
         }
         user.username = username;
-      }
+      } 
 
       // Checks if email is already being used
       if (email && email !== user.email) {
@@ -81,9 +83,9 @@ router.put(
           folder: "/profileImages",
         });
         user.profile_image = uploadResponse.url;
-      } else if (profileImage) {
+      } else if (profileImageURL) {
         const uploadResponse = await imagekit.upload({
-          file: profileImage,
+          file: profileImageURL,
           fileName: `${req.user.type}-${req.user.id}-${Date.now()}`,
           folder: "/profileImages",
         });
