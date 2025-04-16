@@ -81,6 +81,7 @@ const DashBoard = () => {
                 <div className="dbMatchRequests">
                 {requests.length > 0 ? requests.map(request => (
                         <div key={request.id} className="dbMatchRequestItem">
+                        <img src={request.image} alt={request.name} className="dbrequestImage" />
                             <p>{request.name} - {request.year}</p>
                             <div className="dbRequestButtons">
                                 <button className="acceptButton" onClick={() => handleAccept(request.id)}>Accept</button>

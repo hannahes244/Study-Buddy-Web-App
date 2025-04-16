@@ -7,11 +7,11 @@ import  {Link} from 'react-router-dom';
 
 const SignInPopup = ({ onClose }) => {
     return (
-      <div className="popup-overlay">
-        <div className="popup-content">
+      <div className="sipopup-overlay">
+        <div className="sipopup-content">
           <button onClick={onClose} className="SignUpClose">Close</button>
           <div className="signupcontent">
-            <h2 className="question">Welcome Back!!</h2>
+            <h2 className="suquestion">Welcome Back!!</h2>
             <h2 lassName="SignUp">Sign In</h2>
               <input type="text" placeholder="Email" required />
               <input type="password" placeholder="Password" required />

@@ -29,9 +29,6 @@ const NavBar = () => {
               <Link to="/findmatches">Find Matches</Link>
             </div>
             <div>
-              <Link to="/requests">Requests</Link>
-            </div>
-            <div>
               <Link to="/mymatches">My Matches</Link>
             </div>
           </div>
