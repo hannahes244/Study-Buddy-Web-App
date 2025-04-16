@@ -104,4 +104,4 @@ npm install
 
 # Additional packages
 npm install motion prop-types react-router-dom reactjs-popup
-npm install react-confetti react-spring cors react-script
+npm install react-confetti react-spring cors react-scripts
