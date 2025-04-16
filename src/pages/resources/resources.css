@@ -45,8 +45,6 @@ td {
     border-bottom: 1px solid black;
 }
 
-}
-
 .resources-offer-title {
     grid-area: header;
     text-align: center;
