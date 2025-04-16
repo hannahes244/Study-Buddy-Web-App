@@ -86,6 +86,7 @@ With everyone’s tasks wrapped up, we finally pushed all our changes to GitHub 
 - Frequently Asked Questions
 - Product Backlog
 - About Us
+
 These tied our project design and requirements for the course together in one page. This was a really important week for locking everything in.
 
 ### Week 10: Almost to the Finish Line
