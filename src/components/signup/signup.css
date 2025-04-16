@@ -14,7 +14,7 @@
   } */
 
 
-  .supopup-overlay {
+  .popup-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -26,7 +26,7 @@
     align-items: center;
   }
   
-  .supopup-content {
+  .popup-content {
     background: white;
     padding-right: 50px;
     padding-left: 35px;
@@ -38,7 +38,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
-  .supopup-content input {
+  .popup-content input {
     display: block;
     width: 100%;
     margin: 10px 0 10px;
@@ -85,6 +85,6 @@
     background-color: transparent;
   }
 
-  .suquestion {
+  .question {
     color: rgb(242, 132, 130);
   }
