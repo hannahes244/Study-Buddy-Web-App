@@ -1,0 +1,7 @@
+Front-end Installations
+- npm install react-router-dom
+
+Back-end Installations
+- npm install jsonwebtoken
+- npm install sequelize
+- npm install mysql2

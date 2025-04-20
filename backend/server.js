@@ -10,7 +10,7 @@ app.use(cors());
 app.use('/api', register);
 app.use('/api', login);
 
-const port = process.env.DB_PORT;
+const port = 10000; //process.env.DB_PORT;
 
 app.get('/', (req, res) => {
     res.send('Welcome to Study Buddy Matchmaker API!');
