@@ -19,7 +19,7 @@ const upload = multer({
 router.put(
   "/accountsettings",
   authenticateToken,
-  authorizeRoles("student", "educator"), 
+  authorizeRoles("student", "educator"),
   upload.single("profileImage"),
   async (req, res) => {
     const {

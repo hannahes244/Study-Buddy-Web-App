@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 9.2.0, for macos14.7 (arm64)
+-- MySQL dump 10.13  Distrib 5.7.24, for osx11.1 (x86_64)
 --
 -- Host: localhost    Database: study_buddy
 -- ------------------------------------------------------
@@ -7,7 +7,7 @@
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `availability`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `availability` (
   `id` int NOT NULL AUTO_INCREMENT,
   `student_id` int NOT NULL,
@@ -49,7 +49,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `course`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `course` (
   `id` varchar(10) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -73,7 +73,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `course_section`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `course_section` (
   `id` char(5) NOT NULL,
   `course_id` varchar(10) NOT NULL,
@@ -102,7 +102,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `educator`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `educator` (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(45) NOT NULL,
@@ -112,6 +112,7 @@ CREATE TABLE `educator` (
   `password` varchar(255) NOT NULL,
   `description` text,
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `profile_image` text,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
@@ -129,12 +130,43 @@ LOCK TABLES `educator` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `match`
+--
+
+DROP TABLE IF EXISTS `match`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `match` (
+  `id` int NOT NULL,
+  `student_id_1` int NOT NULL,
+  `student_id_2` int NOT NULL,
+  `status` enum('Active','Pending','Declined') NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `student_id_1_UNIQUE` (`student_id_1`),
+  UNIQUE KEY `student_id_2_UNIQUE` (`student_id_2`),
+  KEY `student1_fk_idx` (`student_id_1`),
+  KEY `student2_fk_idx` (`student_id_2`),
+  CONSTRAINT `student1_fk` FOREIGN KEY (`student_id_1`) REFERENCES `student` (`id`),
+  CONSTRAINT `student2_fk` FOREIGN KEY (`student_id_2`) REFERENCES `student` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `match`
+--
+
+LOCK TABLES `match` WRITE;
+/*!40000 ALTER TABLE `match` DISABLE KEYS */;
+/*!40000 ALTER TABLE `match` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `meeting`
 --
 
 DROP TABLE IF EXISTS `meeting`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `meeting` (
   `id` int NOT NULL AUTO_INCREMENT,
   `student1_id` int NOT NULL,
@@ -166,7 +198,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `student`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `student` (
   `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(45) NOT NULL,
@@ -178,6 +210,7 @@ CREATE TABLE `student` (
   `classification` enum('Freshman','Sophomore','Junior','Senior') DEFAULT NULL,
   `description` text,
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `profile_image` text,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
@@ -201,7 +234,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `student_enrollment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `student_enrollment` (
   `student_id` int NOT NULL,
   `course_id` varchar(10) NOT NULL,
@@ -234,4 +267,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-07 16:40:20
+-- Dump completed on 2025-04-14 17:53:28

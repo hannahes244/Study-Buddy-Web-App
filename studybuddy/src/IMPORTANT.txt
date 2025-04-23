@@ -1,6 +1,0 @@
-WILL NOT WORK UNLESS INSTALL ALL BELOW:
-- NPM INSTALL
-- REACT-ROUTER-DOM - npm install react-router-dom
-- REACT POPUP -     npm install reactjs-popup --save
-- NPM INSTALL REACT-CONFETTI - npm install react-confetti
-- FRAMER MOTION - npm install framer-motion
