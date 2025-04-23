@@ -16,34 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `availability`
---
-
-DROP TABLE IF EXISTS `availability`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `availability` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `student_id` int NOT NULL,
-  `available_day` enum('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday') NOT NULL,
-  `start_time` time NOT NULL,
-  `end_time` time NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `student_id` (`student_id`),
-  CONSTRAINT `availability_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `availability`
---
-
-LOCK TABLES `availability` WRITE;
-/*!40000 ALTER TABLE `availability` DISABLE KEYS */;
-/*!40000 ALTER TABLE `availability` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `course`
 --
 
@@ -66,6 +38,14 @@ LOCK TABLES `course` WRITE;
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 UNLOCK TABLES;
+
+-- Inserting dummy data into the 'course' table
+INSERT INTO course (id, name, description) VALUES
+('CS101', 'Introduction to Computer Science', 'A foundational course in computer science.'),
+('MA201', 'Calculus I', 'The first course in the calculus sequence.'),
+('EN101', 'Freshman English', 'An introductory course to college-level writing and literature.'),
+('HI101', 'World History I', 'A survey of world history from ancient times to the early modern period.'),
+('PY101', 'General Psychology', 'An introduction to the basic principles of psychology.');
 
 --
 -- Table structure for table `course_section`
@@ -96,6 +76,14 @@ LOCK TABLES `course_section` WRITE;
 /*!40000 ALTER TABLE `course_section` ENABLE KEYS */;
 UNLOCK TABLES;
 
+-- Inserting dummy data into the 'course_section' table
+INSERT INTO course_section (id, course_id, educator_id) VALUES
+('00001', 'CS101', 1),
+('00002', 'CS101', 2),
+('00003', 'MA201', 2),
+('00004', 'EN101', 3),
+('00005', 'HI101', NULL); -- Educator might not be assigned yet
+
 --
 -- Table structure for table `educator`
 --
@@ -112,7 +100,7 @@ CREATE TABLE `educator` (
   `password` varchar(255) NOT NULL,
   `description` text,
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `profile_image` text,
+  `profile_image` MEDIUMBLOB,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
@@ -128,6 +116,11 @@ LOCK TABLES `educator` WRITE;
 /*!40000 ALTER TABLE `educator` DISABLE KEYS */;
 /*!40000 ALTER TABLE `educator` ENABLE KEYS */;
 UNLOCK TABLES;
+
+INSERT INTO educator (username, first_name, last_name, email, password, description) VALUES
+('prof.smith', 'John', 'Smith', 'john.123@example.com', '$2a$10$xxxxxxxxxxxxxxxxxxxxxxxxxxxxx', 'Professor of Computer Science'),
+('dr.jones', 'Alice', 'Jones', 'alice.j@university.edu', '$2a$10$yyyyyyyyyyyyyyyyyyyyyyyyyyyyy', 'Calculus Instructor'),
+('ms.davis', 'Emily', 'Davis', 'e.davis@college.org', '$2a$10$zzzzzzzzzzzzzzzzzzzzzzzzzzz', 'English Department Lecturer');
 
 --
 -- Table structure for table `match`
@@ -161,38 +154,6 @@ LOCK TABLES `match` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `meeting`
---
-
-DROP TABLE IF EXISTS `meeting`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `meeting` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `student1_id` int NOT NULL,
-  `student2_id` int NOT NULL,
-  `meeting_time` datetime NOT NULL,
-  `location` varchar(255) NOT NULL,
-  `status` enum('Pending','Scheduled','Completed','Cancelled') NOT NULL DEFAULT 'Pending',
-  PRIMARY KEY (`id`),
-  KEY `student1_id` (`student1_id`),
-  KEY `student2_id` (`student2_id`),
-  CONSTRAINT `meeting_ibfk_1` FOREIGN KEY (`student1_id`) REFERENCES `student` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `meeting_ibfk_2` FOREIGN KEY (`student2_id`) REFERENCES `student` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `meeting_chk_1` CHECK ((`student1_id` <> `student2_id`))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `meeting`
---
-
-LOCK TABLES `meeting` WRITE;
-/*!40000 ALTER TABLE `meeting` DISABLE KEYS */;
-/*!40000 ALTER TABLE `meeting` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `student`
 --
 
@@ -210,7 +171,7 @@ CREATE TABLE `student` (
   `classification` enum('Freshman','Sophomore','Junior','Senior') DEFAULT NULL,
   `description` text,
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `profile_image` text,
+  `profile_image` MEDIUMBLOB,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),

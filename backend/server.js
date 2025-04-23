@@ -3,6 +3,7 @@ import cors from "cors";
 import register from "./routes/register.js";
 import login from "./routes/login.js";
 import accountsettings from "./routes/accountsettings.js"
+import match from "./routes/match.js"
 import dotenv from "dotenv";
 import sequelize from "./config/db.js";
 
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(register);
 app.use(login);
 app.use(accountsettings);
+app.use(match);
 
 const port = process.env.DB_PORT;
 
