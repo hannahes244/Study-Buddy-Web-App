@@ -23,6 +23,7 @@ const DashBoard = () => {
         const [popupMessage, setPopupMessage] = useState("")
         const [currentRequest, setCurrentRequest] = useState(null);
         const [windowSize, setWindowSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+        const [NumberOfFriends , SetNumberOfFriends]=useState(0);
     
         useEffect(() => {
             const handleResize = () => {
@@ -38,12 +39,24 @@ const DashBoard = () => {
             setConfetti(true);
             setPopupMessage(`${request.name}'s request has been accepted!`);
             setPopupOpen(true);
+
+            const vergil =NumberOfFriends +1
+            SetNumberOfFriends(vergil)
+            
+
+            
+
+
+            
+            
+            
             setTimeout(() => {
                 setConfetti(false);
             }, 3000);
             /* implement actual accept later*/
     
         };
+        
     
         const closePopup = () => {
             setPopupOpen(false);
@@ -57,6 +70,10 @@ const DashBoard = () => {
             setPopupOpen(true);       
             /* implement actual decline later*/
         };
+        ////here  implmenent counter
+       
+       
+      
 
     return (
         <article className="dbContainer">
@@ -92,11 +109,17 @@ const DashBoard = () => {
                     </div>}
                 </div>
             </div>
+            
             <div className = "dbMatchBoxBackground">
                 <div className="dbMatchBoxContainer">
                     <MatchList />
                 </div>
+                
             </div>
+            <div className="textbox-container">
+                    <p>Friends</p>
+                    <p style={{fontSize:30}}>{NumberOfFriends}</p>
+                </div>
         </article>
     );
 };
