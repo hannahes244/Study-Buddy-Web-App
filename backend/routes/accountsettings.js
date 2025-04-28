@@ -20,7 +20,6 @@ router.put(
   "/accountsettings",
   authenticateToken,
   authorizeRoles("student", "educator"),
-  upload.single("profileImage"),
   async (req, res) => {
     const {
       username,
@@ -28,9 +27,7 @@ router.put(
       password,
       first_name,
       last_name,
-      description,
-      phone_number,
-      profileImageURL
+      description
     } = req.body;
 
     try {
@@ -69,28 +66,11 @@ router.put(
         }
         user.email = email;
       }
-      if (first_name) user.first_name = first_name;
-      if (last_name) user.last_name = last_name;
+      if (first_name !== undefined) user.first_name = first_name;
+      if (last_name !== undefined) user.last_name = last_name;
       if (description !== undefined) user.description = description;
       if (phone_number !== undefined && isStudent)
         user.phone_number = phone_number;
-
-      // Image upload for profile image
-      if (req.file) {
-        const uploadResponse = await imagekit.upload({
-          file: req.file.buffer,
-          fileName: `${req.user.type}-${req.user.id}-${Date.now()}`,
-          folder: "/profileImages",
-        });
-        user.profile_image = uploadResponse.url;
-      } else if (profileImageURL) {
-        const uploadResponse = await imagekit.upload({
-          file: profileImageURL,
-          fileName: `${req.user.type}-${req.user.id}-${Date.now()}`,
-          folder: "/profileImages",
-        });
-        user.profile_image = uploadResponse.url;
-      }
 
       await user.save();
       res.json({ message: "Account updated successfully", user });

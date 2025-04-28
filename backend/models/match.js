@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
+import Student from "../models/student.js"
 
 const Match = sequelize.define("match", {
   student_1_id: { type: DataTypes.INTEGER, allowNull: false },
@@ -11,7 +12,7 @@ const Match = sequelize.define("match", {
   },
 });
 
-Match.belongsTo(Student, { foreignKey: "student_1_id", as: "StudentOne" });
-Match.belongsTo(Student, { foreignKey: "student_2_id", as: "StudentTwo" });
+// Match.belongsTo(Student, { foreignKey: "student_id_1"});
+// Match.belongsTo(Student, { foreignKey: "student_id_2"});
 
 export default Match;

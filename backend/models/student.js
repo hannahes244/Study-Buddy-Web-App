@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
+import Match from "../models/match.js"
 
 const Student = sequelize.define("student", {
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
@@ -17,7 +18,7 @@ const Student = sequelize.define("student", {
   profile_image: { type: DataTypes.TEXT },
 });
 
-Student.hasMany(StudentMatch, { foreignKey: "student_1_id", as: "MatchesSent" });
-Student.hasMany(StudentMatch, { foreignKey: "student_2_id", as: "MatchesReceived" });
+Student.hasMany(Match, { foreignKey: "student_1_id", as: "MatchesSent" });
+Student.hasMany(Match, { foreignKey: "student_2_id", as: "MatchesReceived" });
 
 export default Student;
