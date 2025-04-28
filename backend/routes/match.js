@@ -29,8 +29,8 @@ router.post("/match", authenticateToken, async (req, res) => {
     const existingMatch = await Match.findOne({
       where: {
         [Op.or]: [
-          { student_one_id: studentId1, student_two_id: studentId2 },
-          { student_one_id: studentId2, student_two_id: studentId1 },
+          { student_1_id: studentId1, student_2_id: studentId2 },
+          { student_1_id: studentId2, student_2_id: studentId1 },
         ],
       },
     });
@@ -40,8 +40,8 @@ router.post("/match", authenticateToken, async (req, res) => {
     }
 
     const newMatch = await Match.create({
-      student_one_id: studentId1,
-      student_two_id: studentId2,
+      student_1_id: studentId1,
+      student_2_id: studentId2,
       match_status: "Pending", // default, but explicit
     });
 
@@ -69,8 +69,8 @@ router.patch("/match/:id", authenticateToken, async (req, res) => {
     // Optional: check if the user is one of the students involved
     if (
       req.user.type !== "student" ||
-      (match.student_one_id !== req.user.id &&
-        match.student_two_id !== req.user.id)
+      (match.student_1_id !== req.user.id &&
+        match.student_2_id !== req.user.id)
     ) {
       return res
         .status(403)

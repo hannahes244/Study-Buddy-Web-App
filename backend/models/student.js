@@ -17,4 +17,7 @@ const Student = sequelize.define("student", {
   profile_image: { type: DataTypes.TEXT },
 });
 
+Student.hasMany(StudentMatch, { foreignKey: "student_1_id", as: "MatchesSent" });
+Student.hasMany(StudentMatch, { foreignKey: "student_2_id", as: "MatchesReceived" });
+
 export default Student;

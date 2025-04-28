@@ -11,4 +11,7 @@ const Match = sequelize.define("match", {
   },
 });
 
+Match.belongsTo(Student, { foreignKey: "student_1_id", as: "StudentOne" });
+Match.belongsTo(Student, { foreignKey: "student_2_id", as: "StudentTwo" });
+
 export default Match;
