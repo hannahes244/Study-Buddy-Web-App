@@ -1,0 +1,15 @@
+.message {
+    border-bottom: 1px solid rgb(240, 240, 240);
+    border-top: 1px solid rgb(240, 240, 240);
+}
+
+.message-username {
+    font-weight: bold;
+    margin-right: 10px;
+    color: black;
+}
+
+.message-text{
+    color: black;
+    font-size: 15px;
+}
