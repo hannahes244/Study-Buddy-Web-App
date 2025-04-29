@@ -24,7 +24,7 @@ Tired of studying alone? Study Buddy takes the stress out of finding compatible 
 | Category       | Technology  |
 |----------------|------------|
 | **Frontend**   | React.js   |
-| **Backend**    | Express.js |
+| **Backend**    | Node/Express.js |
 | **Database**   | MySQL      |
 
 ## ⚙️ Installation  
