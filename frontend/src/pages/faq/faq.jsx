@@ -40,6 +40,7 @@ const Faq = () => {
           <span className="highlight">Frequently Asked Questions</span>
         </motion.h1>
       </div>
+
       <div className="faq-list">
         {faqData.map((item, index) => (
           <div key={index} className="faq-item">
@@ -59,6 +60,25 @@ const Faq = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="faq-submit-box">
+        <h3 className="faq-submit-title">💬 Leave Us a Question</h3>
+        <form 
+          action="https://formspree.io/f/mwpovryb" 
+          method="POST" 
+          className="faq-form"
+        >
+          <label htmlFor="user-question" className="faq-label">Your Question:</label>
+          <textarea 
+            id="user-question" 
+            name="question" 
+            rows="4" 
+            required 
+            placeholder="Type your question here..."
+          ></textarea>
+          <button type="submit" className="faq-submit-button">Submit</button>
+        </form>
       </div>
     </div>
   );

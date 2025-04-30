@@ -7,4 +7,9 @@
     overflow: hidden;
     position: relative;
   }
+
+.dbCurrentMatch {
+    width: 35vh;
+    height: 47vh;
+}
   

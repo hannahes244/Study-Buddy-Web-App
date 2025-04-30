@@ -6,6 +6,7 @@ import { useState} from 'react';
 // Needed to install npm install prop-types to use this
 // Need to install npm install motion
 
+
 const MatchCard = ({id, name, classification, matchimage, bio, courses, interests, index, totalcards, removeCard}) => {
 
     const motionValue = useMotionValue(0); //used to store and track animated values, they update smoothly without rerendering
@@ -19,8 +20,7 @@ const MatchCard = ({id, name, classification, matchimage, bio, courses, interest
     );
 
     const animControls = useAnimation();
-
-const [isHidden, setIsHidden] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
 
     return (
         
