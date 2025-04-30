@@ -1,0 +1,56 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin-left: -40px;
+    margin-top: -40px;
+    font-family: "Manrope", sans-serif;
+}
+
+body {
+    font-family: Manrope;
+    margin: 40px;
+    background-color: transparent; 
+    margin-bottom: 0px;
+    justify-content: center;
+}
+
+.reqsArticle {
+    /* margin-bottom: 20px;
+    margin-left: 38px; rgb(247, 237, 226)*/
+    margin-top: 30px;
+    width: 100vw;
+    background-color: rgb(33, 19, 12) !important; 
+    height: 102vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.vibeVideo {
+    margin-top: 50px;
+}
+
+.vibeHeading {
+    color: white;
+    font-size: 60px;
+}
+
+.vibeChoices {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 0px;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+.vibeButton {
+    padding: 10px;
+    background-color: pink;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: Manrope;
+}

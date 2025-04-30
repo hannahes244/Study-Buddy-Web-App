@@ -1,0 +1,45 @@
+.welcome {
+    background-color: rgb(247, 237, 226);
+    width: 100vw;
+    height: 90vh;
+    margin-top: 95px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.welcomeVideo {
+    width: 80%;
+    height: 80%;
+    margin-top: -40px;
+}
+
+.welcomeButton {
+    text-align: center;
+    font-family: "Manrope";
+    font-size: 40px;
+    color: rgb(242, 132, 130);
+    background-color: white;
+    border: rgb(242, 132, 130) 2px solid;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    padding-left: 15px; padding-right: 15px;
+    transition: all .5s ease-in-out;
+}
+
+.welcomeButton:hover {
+    background-color: rgb(242, 132, 130);
+    color: white;
+    border: transparent 2px solid;
+    transform: scale(1.1)
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 200px;
+}

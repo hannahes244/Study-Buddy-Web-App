@@ -1,0 +1,28 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin-left: -40px;
+    margin-top: -40px;
+    font-family: "Manrope", sans-serif;
+    background-color: rgb(247, 237, 226);
+}
+
+body {
+    font-family: Manrope;
+    margin: 40px;
+    background-color: rgb(247, 237, 226);
+    margin-bottom: 0px;
+    justify-content: center;
+}
+
+.fMArticle {
+    margin-bottom: 20px;
+    margin-left: 38px;
+    width: 100vw;
+    justify-content: center;
+}
+
+.fMArticle div h1{
+    margin-top: 150px;
+    font-size: 60px;
+}

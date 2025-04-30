@@ -1,0 +1,37 @@
+/*FOOTER CSS*/
+
+footer {
+    background-color: rgb(242, 132, 130);
+    grid-area: footer;
+    font-family: "Manrope";
+    bottom: 0px;
+    right: 0px;
+    height: 62px;
+    width: 100vw;
+}
+
+footer a {
+    color: white;
+    font-size: 15px;;
+}
+
+.footer-container {
+    text-align: center;
+}
+
+footer a:hover{
+    border: rgb(242, 132, 130) 3px solid;
+    background-color: white;
+    border-radius: 15px;
+    padding: 7px;
+}
+
+.footer-container ul {
+    display: flex; 
+    justify-content: space-evenly; 
+    gap: 50px; 
+    list-style: none;
+    padding: 20px; 
+    margin: 0; 
+    width: 98vw;
+}
