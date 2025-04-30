@@ -11,47 +11,83 @@ import cat from "../../assets/acnhpfps/cat.jpeg";
 import duck from "../../assets/acnhpfps/duck.jpeg";
 import pig from "../../assets/acnhpfps/pig.jpeg";
 import raccoon from "../../assets/acnhpfps/raccoon.jpeg";
+import raccoonwsunglasses from "../../assets/acnhpfps/raccoonwsunglasses.jpeg";
+import sleepingdog from "../../assets/acnhpfps/sleepingdog.jpeg";
+import tomnook from "../../assets/acnhpfps/tomnook.jpeg";
+import yellowduck from "../../assets/acnhpfps/yellowduck.jpeg";
+import sittingcat from "../../assets/acnhpfps/sittingcat.jpeg";
+import sittingbear from "../../assets/acnhpfps/sittingbear.jpeg";
+import madsquirrel from "../../assets/acnhpfps/madsquirrel.jpeg";
+import goat from "../../assets/acnhpfps/goat.jpeg";
 import SignUpPopup from "../../components/signup/signup";
 import SignInPopup from "../../components/signin/signin";
 
 const DashBoard = () => {
+    const navigate = useNavigate();
     const [requests, setRequests] = useState([
-        {
-            id: 1,
-            name: "Saniyah",
-            classification: "Sophomore",
-            matchimage: cat,
-            bio: "Straight to the point- I'm here to find a study buddy who actually wants to get things done. I'm all about setting goals, making study schedules, and keeping each other accountable. If you need someone who will hype you up before exams and make sure you don't procrastinate (too much), let's team up! Bonus: I make aesthetic notes and killer study guides.",
-            interests: ["Drawing", "Photography", "Reading", "Music", "Money"],
-            courses: ["Discrete Structures", "Systems Architecture", "Web Development"],
-        },
-        {
-            id: 2,
-            name: "Hannah",
-            classification: "Sophomore",
-            matchimage: duck,
-            bio: "Looking for a study buddy who's all about balance—serious study sessions, but with coffee breaks, brain dumps, and occasional 'what are we even doing with our lives' moments. I work best with people who keep it low-stress but still get stuff done. If you bring good vibes and a shared love for background study music, we'll get along great.",
-            interests: ["Crochet", "Puzzles", "Baking", "Legos", "Volleyball"],
-            courses: ["Discrete Structures", "Systems Architecture", "Web Development", "Computer Networking"],
-        },
-        {
-            id: 3,
-            name: "Jeremiah",
-            classification: "Sophomore",
-            matchimage: pig,
-            bio: "If you thrive under last-minute pressure, we might just be the perfect study match. I'm that person pulling late-night study sessions with coffee in one hand and highlighters in the other. Need a partner to go over flashcards at 2 AM or talk through concepts when you're on the verge of giving up? I got you.",
-            interests: ["Surfing", "Writing", "Painting", "Gardening"],
-            courses: ["Database Management", "Systems Architecture", "Web Development"],
-        },
-        {
-            id: 4,
-            name: "Javon",
-            classification: "Sophomore",
-            matchimage: raccoon,
-            bio: "Studying is way more fun when you're not doing it alone! I love bouncing ideas off people, teaching concepts (because it helps me learn, too), and turning study time into something productive and social. Whether it's deep discussions, whiteboard sessions, or a casual group study vibe, let's make learning less painful together.",
-            interests: ["Dancing", "Singing", "Kayaking", "Cooking", "Backpacking", "Video Games"],
-            courses: ["Discrete Structures", "Systems Architecture", "Web Development"],
-        }
+    {
+      id: 22,
+      name: "Sebastian",
+      classification: "Junior",
+      matchimage: raccoon,
+      bio: "Hyper-competitive but in a fun way. I love setting goals, crushing them, and leveling up academically like it’s a video game. If you need a study buddy who’ll push you to be your absolute best, I’m right here!",
+      interests: ["Weightlifting", "Strategy Games", "Debate", "Coding Competitions"],
+      courses: ["Algorithms", "Data Mining", "Machine Learning"],
+    },
+    {
+      id: 23,
+      name: "Nina",
+      classification: "Junior",
+      matchimage: pig,
+      bio: "I'm pretty introverted, but I’m super dependable once you get to know me. If you want someone who's focused, organized, and great at one-on-one study sessions (minus the small talk), I’m your perfect match.",
+      interests: ["Reading", "Sketching", "Nature Walks", "Indie Music"],
+      courses: ["Operating Systems", "Computer Architecture", "Algorithms"],
+    },
+    {
+      id: 24,
+      name: "Zion",
+      classification: "Senior",
+      matchimage: sittingcat,
+      bio: "Big energy! I love leading study groups, organizing meetups, and making sure everyone feels included and motivated. If you need someone to keep the group on task *and* laughing, I'm your guy!",
+      interests: ["Public Speaking", "Traveling", "Music Festivals", "Basketball"],
+      courses: ["Cybersecurity", "Cloud Computing", "Project Management"],
+    },
+    {
+      id: 25,
+      name: "Sage",
+      classification: "Sophomore",
+      matchimage: sittingbear,
+      bio: "Prefer studying remotely? Same here! I'm all about virtual study sessions, shared docs, and late-night Zoom calls. If you’re looking for a study partner who's reliable even from miles away, let's connect online and crush it.",
+      interests: ["Gaming", "Blogging", "Photography", "Puzzles"],
+      courses: ["Intro to Data Science", "Web Development", "Discrete Structures"],
+    },
+    {
+      id: 26,
+      name: "Luca",
+      classification: "Freshman",
+      matchimage: sleepingdog,
+      bio: "I’m a little on the quiet side but super motivated when it comes to hitting academic goals. I prefer small, focused sessions rather than big study groups. If you need someone calm and committed, I'm your person!",
+      interests: ["Chess", "Coding", "Baking", "Podcasts"],
+      courses: ["Intro to Programming", "Linear Algebra", "General Chemistry"],
+    },
+    {
+      id: 27,
+      name: "Aria",
+      classification: "Junior",
+      matchimage: yellowduck,
+      bio: "Nothing beats a good in-person study group. I love gathering a bunch of motivated people, keeping the vibes high, and making studying feel like a team event. If you're looking for someone who makes learning social and fun, let’s do this!",
+      interests: ["Dance", "Theater", "Writing", "Travel"],
+      courses: ["Artificial Intelligence", "Software Engineering", "Computer Networking"],
+    },
+    {
+      id: 28,
+      name: "Dylan",
+      classification: "Sophomore",
+      matchimage: madsquirrel,
+      bio: "Remote work warrior here! I’m all about Google Docs, shared notes, Discord study groups, and productivity apps. If you're looking for someone who knows how to stay connected and focused without needing to meet up, we’ll work great together!",
+      interests: ["Technology", "Esports", "Graphic Design", "Reading"],
+      courses: ["Systems Architecture", "Database Systems", "Cybersecurity"],
+    },
     ]);
 
     const [confetti, setConfetti] = useState(false);
@@ -65,7 +101,6 @@ const DashBoard = () => {
     const [showTutorial, setShowTutorial] = useState(true);
     const [signinOpen, setSigninOpen] = useState(false);
     const [signupOpen, setSignupOpen] = useState(false);
-
     
     useEffect(() => {
         const handleResize = () => {
@@ -75,19 +110,17 @@ const DashBoard = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const navigate = useNavigate();
-
+    /* LOCAL STORAGE, COMMENT OUT FOR TESTING */
     useEffect(() => {
       const hasSeenTutorial = localStorage.getItem("hasSeenTutorial") === "true";
       if (hasSeenTutorial) {
-        setSigninOpen(true);
         setShowTutorial(false);
       } else {
         setShowTutorial(true);
       }
     }, []);
-      
     
+
     const handleAccept = (id, name, classification, matchimage, courses) => {
         const request = requests.find(request => request.id === id);
         setRequests(requests.filter(request => request.id !== id));
@@ -115,6 +148,7 @@ const DashBoard = () => {
             // Store the updated array back in local storage
             localStorage.setItem('acceptedMatches', JSON.stringify(acceptedMatchesArray));
         }
+
 
     };
     
@@ -144,58 +178,64 @@ const DashBoard = () => {
     const handleCloseTutorial = () => {
         setShowTutorial(false);
         setSignupOpen(true);
+        navigate('/accountsettings');
         localStorage.setItem("hasSeenTutorial", "true");
       };
 
     return (
-    <>
-      {showTutorial && (
-        <div className="tutorial-overlay">
-          <div className="tutorial-popup">
-            <h2>Welcome to Study Buddy!</h2>
-            <p>Here’s how to get started:</p>
-            <ol>
-              <li><strong>Create an Account:</strong> Click the button below to get Started!</li>
-              <li><strong>Build Your Profile:</strong> Add your courses and major.</li>
-              <li><strong>Find Matches:</strong> Browse for your perfect study partner.</li>
-              <li><strong>Send Requests:</strong> Connect with buddies and start studying!</li>
-            </ol>
-            <p>Let’s make this semester your best one yet 🎓</p>
-            <button className="tutorial-close-button" onClick={handleCloseTutorial}>
-              Let’s Go!
-            </button>
-          </div>
-        </div>
-      )}
+        <>
+        {showTutorial && (
+            <div className="tutorial-overlay">
+              <div className="tutorial-popup">
+                <h2>Welcome to Study Buddy!</h2>
+                <p>Here’s how to get started:</p>
+                <ol>
+                  <li><strong>Create an Account:</strong> Click the button below!</li>
+                  <li><strong>Build Your Profile:</strong> Add your courses and major.</li>
+                  <li><strong>Find Matches:</strong> Browse for your perfect study partner.</li>
+                  <li><strong>Send Requests:</strong> Connect with buddies and start studying!</li>
+                </ol>
+                <p>Let’s make this semester your best one yet 🎓</p>
+                <button className="tutorial-close-button" onClick={handleCloseTutorial} onClose={handleCloseTutorial}>
+                  Let’s Go!
+                </button>
+              </div>
+            </div>
+          )}
+    
 
-      <article className="dbContainer">
-        {confetti && <Confetti width={windowSize.width} height={windowSize.height} />}
+        <article className="dbContainer">
+            {confetti && <Confetti width={windowSize.width} height={windowSize.height} />} 
 
         <Popup className="reqspopup" open={popupOpen} closeOnDocumentClick onClose={closePopup}>
-          <div className="reqspopupBox">
-            <img className="reqspopup-image" src={requestPic} alt="<MatchedPic>" />
-            <h2>{popupMessage}</h2>
+            <div className="reqspopupBox">
+                <img className="reqspopup-image"
+                src= {requestPic}
+                alt="<MatchedPic>"
+                />
+                <h2>{popupMessage}</h2>
             <button className="closePopupButton" onClick={closePopup}>Close</button>
-          </div>
+            </div>
         </Popup>
 
         <Popup className="request-user-popup" open={requestUserPopupOpen} closeOnDocumentClick onClose={closeRequestUserPopup}>
-          <div className="request-user-popup-box">
-            {selectedRequestUser && (
-              <MatchCard
-                id={selectedRequestUser.id}
-                name={selectedRequestUser.name}
-                classification={selectedRequestUser.classification}
-                matchimage={selectedRequestUser.matchimage}
-                bio={selectedRequestUser.bio}
-                courses={selectedRequestUser.courses}
-                interests={selectedRequestUser.interests}
-                index={0}
-                totalcards={1}
-                removeCard={() => {}}
-              />
-            )}
-          </div>
+            <div className="request-user-popup-box">
+                {selectedRequestUser && (
+                    <MatchCard
+                    id={selectedRequestUser.id}
+                    name={selectedRequestUser.name}
+                    classification={selectedRequestUser.classification}
+                    matchimage={selectedRequestUser.matchimage}
+                    bio={selectedRequestUser.bio}
+                    courses={selectedRequestUser.courses}
+                    interests={selectedRequestUser.interests}
+                    // You might need to pass index and totalcards if your MatchCard uses them in the popup context
+                    index={0}
+                    totalcards={1}
+                    removeCard={() => {}}
+  />
+                )}
+            </div>
         </Popup>
         {signupOpen && (
             <SignUpPopup onClose={() => setSignupOpen(false)} />
@@ -203,39 +243,37 @@ const DashBoard = () => {
         {signinOpen && (
         <SignInPopup onClose={() => setSigninOpen(false)} />
         )}
-        <div className="dbMatchRequestsBox">
-          <div className="dbMatchRequests">
-            <h1 className="dbMatchRequestsHeading">Match Requests</h1>
-            {requests.length > 0 ? (
-              requests.map((request) => (
-                <div key={request.id} className="dbMatchRequestItem">
-                  <p className="dbMatchRequestUser" onClick={() => handleRequestClick(request)}>
-                    {request.name} - {request.classification}
-                  </p>
-                  <div className="dbRequestButtons">
-                    <button className="acceptButton" onClick={() => handleAccept(request.id, request.name, request.classification, request.matchimage, request.courses)}>Accept</button>
-                    <button className="declineButton" onClick={() => handleDecline(request.id)}>Decline</button>
-                  </div>
+            <div className="dbMatchRequestsBox">
+                <div className="dbMatchRequests">
+                    <h1 className="dbMatchRequestsHeading">Match Requests</h1>
+                {requests.length > 0 ? requests.map(request => (
+                        <div 
+                        key={request.id} 
+                        className="dbMatchRequestItem">
+                            <p className="dbMatchRequestUser" onClick={() => handleRequestClick(request)}>{request.name} - {request.classification}</p>
+                            <div className="dbRequestButtons">
+                                <button className="acceptButton" onClick={() => handleAccept(request.id, request.name, request.classification, request.matchimage, request.courses)}>Accept</button>
+                                <button className="declineButton" onClick={() => handleDecline(request.id)}>Decline</button>
+                            </div>
+                        </div>
+                    )) : <div className="dbMatchRequestsExample">
+                     No Requests
+                    </div>}
                 </div>
-              ))
-            ) : (
-              <div className="dbMatchRequestsExample">No Requests</div>
-            )}
-          </div>
-        </div>
-
-        <div className="dbMatchBoxBackground">
-          <div className="dbMatchBoxContainer">
-            <MatchList />
-          </div>
-          <div className="textbox-container">
-            <p>Friends</p>
-            <p style={{ fontSize: 30 }}>{NumberOfFriends}</p>
-          </div>
-        </div>
-      </article>
-    </>
-  );
+            </div>
+            <div className = "dbMatchBoxBackground">
+                <div className="dbMatchBoxContainer">
+                    <MatchList />
+                </div>
+                <div className="textbox-container">
+                    <p>Friends</p>
+                    <p style={{ fontSize: 30 }}>{NumberOfFriends}</p>
+                </div>
+            </div>
+        </article>
+        </>
+    );
 };
 
 export default DashBoard;
+

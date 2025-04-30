@@ -9,16 +9,17 @@ html, body {
 body {
     font-family: Manrope;
     margin: 40px;
-    background-color: rgb(247, 237, 226);
+    background-color: transparent; 
     margin-bottom: 0px;
     justify-content: center;
 }
 
 .reqsArticle {
     /* margin-bottom: 20px;
-    margin-left: 38px; */
+    margin-left: 38px; rgb(247, 237, 226)*/
     margin-top: 30px;
     width: 100vw;
+    background-color: rgb(33, 19, 12) !important; 
     height: 102vh;
     align-items: center;
     display: flex;

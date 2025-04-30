@@ -9,7 +9,6 @@
 
 .sipopup-overlay {
     position: fixed;
-    z-index: 9999;
     top: 0;
     left: 0;
     width: 100%;
@@ -22,7 +21,7 @@
 
 .sipopup-content {
     background: white;
-    z-index: 9999;
+    z-index: 1000;
     position: fixed;
     padding-right: 50px;
     padding-left: 35px;

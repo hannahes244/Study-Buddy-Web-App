@@ -10,29 +10,13 @@ const Vibe = () => {
       height: '800', // Adjust as needed
       width: '1480',   // Adjust as needed
       playerVars: {
-        // https://developers.google.com/youtube/player_parameters
         autoplay: 1, // Set to 1 to autoplay the video
       },
     };
-  
-    const onReady = (event) => {
-      // access to player in all event handlers via event.target
-      event.target.pauseVideo(); // Optionally pause the video when it's ready
-    }
-    
+
     return (
         <article className="reqsArticle">
-            {/* <div>
-                <p className="vibeHeading">Pick a vibe...</p>
-            </div>
-            <div className="vibeChoices">
-                <button className="vibeButton">Starlit</button>
-                <button className="vibeButton">Cottage</button>
-                <button className="vibeButton">Vintage</button>
-                <button className="vibeButton">Cafe</button>
-                <button className="vibeButton">Library</button>
-            </div> */}
-            <YouTube className="vibeVideo" videoId={videoId} opts={opts} onReady={onReady} />
+            <YouTube className="vibeVideo" videoId={videoId} opts={opts} />
         </article>
     )
 }

@@ -9,8 +9,11 @@ import raccoonwsunglasses from "../../assets/acnhpfps/raccoonwsunglasses.jpeg";
 import sleepingdog from "../../assets/acnhpfps/sleepingdog.jpeg";
 import tomnook from "../../assets/acnhpfps/tomnook.jpeg";
 import yellowduck from "../../assets/acnhpfps/yellowduck.jpeg";
+import sittingcat from "../../assets/acnhpfps/sittingcat.jpeg";
+import sittingbear from "../../assets/acnhpfps/sittingbear.jpeg";
+import madsquirrel from "../../assets/acnhpfps/madsquirrel.jpeg";
+import goat from "../../assets/acnhpfps/goat.jpeg";
 
-// Array of preset profile picture URLs or paths
 const presetProfilePics = [
   cat,
   duck,
@@ -20,8 +23,14 @@ const presetProfilePics = [
   sleepingdog,
   tomnook,
   yellowduck,
-  // Add more paths or URLs to your preset images
+  goat,
+  sittingcat,
+  sittingbear,
+  madsquirrel
 ];
+
+const courseList = ["Mathematics", "Computer Science", "Physics", "Chemistry", "Biology", "Engineering", "History", "Literature", "Art", "Music"];
+const interestList = ["Reading", "Hiking", "Gaming", "Crochet", "Coding", "Painting", "Photography", "Sports", "Movies", "Music", "Travel"];
 
 const AccountSettings = () => {
   const [formData, setFormData] = useState(() => {
@@ -30,9 +39,9 @@ const AccountSettings = () => {
       return JSON.parse(storedData);
     } else {
       return {
-        firstName: "",
-        lastName: "",
-        phoneNumber: "",
+        first_name: "",
+        last_name: "",
+        phonenumber: "",
         email: "",
         courses: "",
         classification: "",
@@ -54,8 +63,15 @@ const AccountSettings = () => {
   }, [formData]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, selectedOptions } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    if (type === 'select-multiple') {
+      const selectedValues = Array.from(selectedOptions).map(option => option.value);
+      setFormData({ ...formData, [name]: selectedValues });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handlePresetImageSelect = (imageUrl) => {
@@ -76,17 +92,17 @@ const AccountSettings = () => {
         <div className="mainInfo">
           <div className="entryarea">
             <span>First Name</span>
-            <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required />
+            <input type="text" name="first_name" value={formData.first_name} onChange={handleChange} required />
           </div>
 
           <div className="entryarea">
             <span>Last Name</span>
-            <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
+            <input type="text" name="last_name" value={formData.last_name} onChange={handleChange} required />
           </div>
 
           <div className="entryarea">
             <span>Phone Number</span>
-            <input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} />
+            <input type="text" name="phonenumber" value={formData.phonenumber} onChange={handleChange} />
           </div>
 
           <div className="entryarea">
@@ -96,7 +112,39 @@ const AccountSettings = () => {
 
           <div className="entryarea">
             <span>Courses</span>
-            <input type="text" name="courses" value={formData.courses} onChange={handleChange} />
+            <select
+              name="courses"
+              multiple
+              value={formData.courses}
+              onChange={handleChange}
+              className="multi-select-dropdown"
+            >
+              {courseList.map((course) => (
+                <option key={course} value={course}>
+                  {course}
+                </option>
+              ))}
+            </select>
+            {/* <input type="text" name="courses" value={formData.courses} onChange={handleChange} /> */}
+            
+          </div>
+
+          <div className="entryarea">
+            <span>Interests</span>
+            {/* <input type="text" name="interests" value={formData.interests} onChange={handleChange} /> */}
+            <select
+              name="interests"
+              multiple
+              value={formData.interests}
+              onChange={handleChange}
+              className="multi-select-dropdown"
+            >
+              {interestList.map((interest) => (
+                <option key={interest} value={interest}>
+                  {interest}
+                </option>
+              ))}
+            </select>
           </div>
 
           
@@ -122,16 +170,6 @@ const AccountSettings = () => {
                   className="asprofile-image" />
                 </div>
                     )}
-
-
-              {/* <label htmlFor="profilePicUpload">
-                  <div className="asProfilePic">
-                    <img 
-                    src={formData.profile_image || defaultprofilepic} //{profileImage || defaultprofilepic} 
-                    alt="Profile" 
-                    className="asprofile-image" />
-                  </div>
-              </label> */}
 
               <div className="preset-image-options">
                 {presetProfilePics.map((imageUrl, index) => (
