@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 .dbMatchBoxBackground {
     background-image: url("../../assets/backgroundimg5.jpeg");
     width: 77vw;
@@ -79,8 +80,8 @@
     "imgbox infobox"
     "buttons buttons";
     align-items: center;/*horizontal centering*/
+    z-index: 1000;
 }
-
 
 
 .dbMatchImgBox {
@@ -308,8 +309,9 @@
     align-items: center;
     gap: 1rem;
     position: fixed;
-    left: 600px;
-    top: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .reqspopup-image {
@@ -366,33 +368,33 @@
 }
 
 .textbox-container {
-    position: absolute;
-    bottom: -30px;
-    right: 20px;
-    background-color: #fff0f0;
-    padding: 15px 25px;
-    z-index: 9999;
-    font-size: 18px;
-    border-radius: 15px;
-    border: 2px solid rgb(240, 110, 110);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    font-family: 'Poppins', sans-serif;
-    color: rgb(240, 110, 110);
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fff0f0;
+  padding: 15px 25px;
+  z-index: 9999;
+  font-size: 18px;
+  border-radius: 15px;
+  border: 2px solid rgb(240, 110, 110);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  color: rgb(240, 110, 110);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-  
+
 .textbox {
-padding: 8px 16px;
-font-size: 24px;
-border: 2px solid rgb(240, 110, 110);
-border-radius: 10px;
-background-color: #fff0f0;
-color: rgb(240, 110, 110);
-font-family: 'Poppins', sans-serif;
-text-align: center;
-min-width: 40px;
+  padding: 8px 16px;
+  font-size: 24px;
+  border: 2px solid rgb(240, 110, 110);
+  border-radius: 10px;
+  background-color: #fff0f0;
+  color: rgb(240, 110, 110);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  min-width: 40px;
 }
 
 .tutorial-overlay {
@@ -406,9 +408,9 @@ min-width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.tutorial-popup {
+  }
+  
+  .tutorial-popup {
     background-color: #fff0f0;
     padding: 40px;
     border-radius: 16px;
@@ -418,25 +420,25 @@ min-width: 40px;
     text-align: left;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
-}
-
-.tutorial-popup h2 {
+  }
+  
+  .tutorial-popup h2 {
     color: rgb(240, 110, 110);
     font-size: 2rem;
     margin-bottom: 15px;
-}
-
-.tutorial-popup ol {
+  }
+  
+  .tutorial-popup ol {
     padding-left: 20px;
     margin-bottom: 20px;
-}
-
-.tutorial-popup li {
+  }
+  
+  .tutorial-popup li {
     margin-bottom: 10px;
     line-height: 1.5;
-}
-
-.tutorial-close-button {
+  }
+  
+  .tutorial-close-button {
     background-color: rgb(240, 110, 110);
     color: white;
     border: none;
@@ -445,9 +447,9 @@ min-width: 40px;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.tutorial-close-button:hover {
+  }
+  
+  .tutorial-close-button:hover {
     background-color: #e05a5a;
-}
-    
+  }
+  

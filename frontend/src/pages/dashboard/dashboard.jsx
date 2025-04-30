@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import "./dashboard.css"
@@ -18,7 +19,6 @@ import sittingcat from "../../assets/acnhpfps/sittingcat.jpeg";
 import sittingbear from "../../assets/acnhpfps/sittingbear.jpeg";
 import madsquirrel from "../../assets/acnhpfps/madsquirrel.jpeg";
 import goat from "../../assets/acnhpfps/goat.jpeg";
-import  {useNavigate} from 'react-router-dom';
 import SignUpPopup from "../../components/signup/signup";
 import SignInPopup from "../../components/signin/signin";
 
@@ -99,6 +99,8 @@ const DashBoard = () => {
     const [selectedRequestUser, setSelectedRequestUser] = useState(null);
     const [NumberOfFriends , SetNumberOfFriends]=useState(0);
     const [showTutorial, setShowTutorial] = useState(true);
+    const [signinOpen, setSigninOpen] = useState(false);
+    const [signupOpen, setSignupOpen] = useState(false);
     
     useEffect(() => {
         const handleResize = () => {
@@ -108,7 +110,7 @@ const DashBoard = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-
+    /* LOCAL STORAGE, COMMENT OUT FOR TESTING */
     useEffect(() => {
       const hasSeenTutorial = localStorage.getItem("hasSeenTutorial") === "true";
       if (hasSeenTutorial) {
@@ -117,6 +119,7 @@ const DashBoard = () => {
         setShowTutorial(true);
       }
     }, []);
+    
 
     const handleAccept = (id, name, classification, matchimage, courses) => {
         const request = requests.find(request => request.id === id);
@@ -174,7 +177,7 @@ const DashBoard = () => {
 
     const handleCloseTutorial = () => {
         setShowTutorial(false);
-        //setSignupOpen(true);
+        setSignupOpen(true);
         navigate('/accountsettings');
         localStorage.setItem("hasSeenTutorial", "true");
       };
@@ -187,7 +190,7 @@ const DashBoard = () => {
                 <h2>Welcome to Study Buddy!</h2>
                 <p>Here’s how to get started:</p>
                 <ol>
-                  <li><strong>Create an Account:</strong> Click the button below to get Started!</li>
+                  <li><strong>Create an Account:</strong> Click the button below!</li>
                   <li><strong>Build Your Profile:</strong> Add your courses and major.</li>
                   <li><strong>Find Matches:</strong> Browse for your perfect study partner.</li>
                   <li><strong>Send Requests:</strong> Connect with buddies and start studying!</li>
@@ -234,7 +237,12 @@ const DashBoard = () => {
                 )}
             </div>
         </Popup>
-
+        {signupOpen && (
+            <SignUpPopup onClose={() => setSignupOpen(false)} />
+        )}
+        {signinOpen && (
+        <SignInPopup onClose={() => setSigninOpen(false)} />
+        )}
             <div className="dbMatchRequestsBox">
                 <div className="dbMatchRequests">
                     <h1 className="dbMatchRequestsHeading">Match Requests</h1>
