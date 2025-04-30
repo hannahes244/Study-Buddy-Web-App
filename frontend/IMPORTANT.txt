@@ -5,3 +5,5 @@ Back-end Installations
 - npm install jsonwebtoken
 - npm install sequelize
 - npm install mysql2
+- npm install multer
+- npm install imagekit

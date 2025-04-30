@@ -169,6 +169,26 @@ input[name="profilePic"] {
     z-index: 100;
   }
 
+.preset-image-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 400px;
+    gap: 10px;
+}
+
+.preset-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+}
+
+.preset-image:hover {
+    transform: scale(1.1);
+    border: solid 2px rgb(242, 132, 130);
+}
+
   /*
   .profile-container {
     display: flex;

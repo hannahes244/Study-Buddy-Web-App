@@ -10,7 +10,7 @@ dotenv.config();
 
 const router = express.Router();
 
-// Student login
+// Student login // /student
 router.post("/login/student", async (req, res) => {
   try {
     const { email, password } = req.body;

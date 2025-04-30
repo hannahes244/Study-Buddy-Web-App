@@ -1,80 +1,72 @@
-.resourcesContainer{
+.resourcesContainer {
     display: grid;
+    grid-template-areas:
+      "header"
+      "info";
     justify-content: center;
     align-items: center;
-
-    grid-template-areas: 
-    "header"
-    "info";
-
-    margin-top: 150px;
-    margin-bottom: 200px;
-}
-
-.resources-offer-title {
+    gap: 10px;
+  
+    margin-top: 100px;
+    margin-bottom: 150px;
+    padding: 0 20px;
+  }
+  
+  .resources-offer-title {
     grid-area: header;
     text-align: center;
-    font-size: 30px;
-}
-
-
-table {
-    grid-area: info;
-    width: 90vw;
-    background-color: #f5cac3;
-    border-spacing: 0;
-    border-radius: 20px;
-    }
-
-
-th {
-    
-    font-size: 19px;
-    font-weight: bold;
-    color: #777777;
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid black;
-}
-td {
-    
-    font-weight:lighter;
+    font-size: 36px;
+    font-weight: 600;
     color: black;
-    padding: 30px 10px;
-    text-align: center;
-    border-bottom: 1px solid black;
-}
-
-.resources-offer-title {
-    grid-area: header;
-    text-align: center;
-    font-size: 30px;
-}
-
-
-table {
+    margin-bottom: 0; 
+  }
+  
+  table {
     grid-area: info;
-    width: 90vw;
+    width: 100%;
+    max-width: 1200px;
     background-color: #f5cac3;
-    border-spacing: 0;
+    border-collapse: collapse;
     border-radius: 20px;
-    }
-
-
-th {
-    
-    font-size: 19px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  th {
+    font-size: 18px;
     font-weight: bold;
-    color: #777777;
-    padding: 10px;
+    color: #555;
+    padding: 16px;
+    background-color: #fde2dd;
     text-align: center;
-    border-bottom: 1px solid black;
-}
-td {
-    
-    font-weight:lighter;
-    color: black;
-    padding: 30px 10px;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  td {
+    font-size: 16px;
+    font-weight: 400;
+    color: #222;
+    padding: 20px 16px;
     text-align: center;
-    border-bottom: 1px solid black;
-}
+    border-bottom: 1px solid #e3a5a5;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .resources-offer-title {
+      font-size: 28px;
+    }
+  
+    th, td {
+      font-size: 14px;
+      padding: 12px;
+    }
+  
+    table {
+      width: 95vw;
+    }
+  }
+  

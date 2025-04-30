@@ -1,6 +1,15 @@
+#siLogin:hover {
+    background-color: white;
+    border: #f6bd60 2px solid;
+    color:#f6bd60;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bolder;
+} 
 
 .sipopup-overlay {
     position: fixed;
+    z-index: 9999;
     top: 0;
     left: 0;
     width: 100%;
@@ -13,6 +22,8 @@
 
 .sipopup-content {
     background: white;
+    z-index: 9999;
+    position: fixed;
     padding-right: 50px;
     padding-left: 35px;
     padding-bottom: 40px;
@@ -64,7 +75,6 @@
     font-size: 13px;
     font-weight: bold;
     margin-top: 10px;
-    /*width: 100px;*/
 }
 
 #siLogin:hover {
