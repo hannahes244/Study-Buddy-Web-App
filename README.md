@@ -89,12 +89,20 @@ With everyone’s tasks wrapped up, we finally pushed all our changes to GitHub 
 
 These tied our project design and requirements for the course together in one page. This was a really important week for locking everything in.
 
-### Week 10: Almost to the Finish Line
-### Week 11: The Finishing Touches
-### Week 12: Fixing Bugs 
-### Week 13: Styling Changes
-### Week 14: Wrapping Up 
-### Week 15: Deployment & Presentation
+### Week 10: React Progress & Reassigned Tasks
+ We reassigned tasks based on updated priorities and finalized the HTML-to-React conversion. Saniyah refined the dashboard and homepage, Hannah polished the sign-in and sign-up pages, Jeremiah focused on backend and database logic, and Javon continued to work on integrating the blog page. We met twice this week and continued to collaborate consistently. After a few slower weeks, we regained momentum and made significant progress.
+
+### Week 11: Feature Implementation & Styling
+ This week marked a turning point in the project. We made major progress by completing several key components, including the navigation bar, account settings, database models and migrations, and the group blog. Our professor gave us a crash course on proper app flow, which helped us finalize the front-end and back-end connections. The team felt energized and confident heading into the final stretch of the project.
+
+### Week 12: Final Push & GitHub Integration
+ We pushed all updates to GitHub, resolved merge conflicts, and reviewed the app’s functionality as a team. We began preparing for our final presentation and polished the UI. Final additions to the platform included a confetti animation for friend requests, a source code section, a FAQ page, a product backlog, and an About Us section. Everything began coming together smoothly, and the platform started to look complete and professional.
+
+### Week 13: Final Touches & Team Sync
+ We met both in person and online to test the integration between the front-end and back-end. GitHub syncing worked flawlessly. Dr. Rasamny reviewed our app and confirmed that both the back-end and front-end were correctly implemented. We conducted final tests on authentication, dashboard flows, and navigation. This week felt smooth and fulfilling—it confirmed that all of our hard work throughout the semester was paying off.
+
+### Week 14: Crunch Time & Presentation Completion
+ In our final week, we wrapped up all remaining tasks. Jeremiah finalized backend integrations, Hannah and Saniyah completed the database and gamification features while styling UI elements, and Javon created the slide deck for our final presentation. We met twice and worked individually to finish the product and prepare our demo. The pressure was high, but we pulled together and hit every milestone. The project was completed on time and ready to present.
 
 ## ⚙️ Installation  
 
@@ -103,5 +111,5 @@ These tied our project design and requirements for the course together in one pa
 npm install
 
 # Additional packages
-npm install motion prop-types react-router-dom reactjs-popup
+npm install motion prop-types react-router-dom reactjs-popup react-youtube
 npm install react-confetti react-spring cors react-scripts
