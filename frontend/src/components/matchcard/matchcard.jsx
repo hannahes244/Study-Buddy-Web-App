@@ -7,7 +7,6 @@ import { useState} from 'react';
 // Need to install npm install motion
 
 
-
 const MatchCard = ({id, name, classification, matchimage, bio, courses, interests, index, totalcards, removeCard}) => {
 
     const motionValue = useMotionValue(0); //used to store and track animated values, they update smoothly without rerendering

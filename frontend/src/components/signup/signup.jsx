@@ -23,10 +23,23 @@ const SignUpPopup = ({ onClose }) => {
       ...prevData,
       [name]: value,
     }));
-  }
-
-  const handleSubmit = async (e) =>{
+  };
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const { username, first_name, last_name, email, password } = inputs;
+    const currentUser = { username, first_name, last_name, email, password } ;
+    const storeCurrentUser = localStorage.getItem('currentUser');
+    let currentUserArray = storeCurrentUser ? JSON.parse(storeCurrentUser) : [];
+    const isAlreadyRegistered = currentUserArray.some(user => user.username === currentUser.username);
+    if (!isAlreadyRegistered) {
+        // Add the new accepted user to the array
+        currentUserArray = [...currentUserArray, currentUser];
+        console.log(currentUserArray);
+  
+        // Store the updated array back in local storage
+        localStorage.setItem('currentUser', JSON.stringify(currentUserArray));
+    }
+
     try{
       const response = await axios.post(`${baseURL}/register/student`, inputs);
 
@@ -94,7 +107,7 @@ const SignUpPopup = ({ onClose }) => {
                   placeholder="Password" required 
                   />
 
-                <button type="submit" onSubmit={handleSubmit} className="SignUpLogin">Sign Up</button>
+                <button type="submit" onClick={onClose} className="SignUpLogin">Sign Up</button>
 
               </form>
             </div>

@@ -1,0 +1,51 @@
+.message {
+    border-bottom: 1px solid rgb(240, 240, 240);
+    border-top: 1px solid rgb(240, 240, 240);
+}
+
+.message-username {
+    font-weight: bold;
+    margin-right: 10px;
+    color: black;
+}
+
+.message-text{
+    color: black;
+    font-size: 15px;
+}
+
+.messageCardBox {
+    border: 1px solid rgb(240, 240, 240);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 280px;
+    font-family: Manrope;
+    background-color: transparent;
+}
+
+.messageCardBox:hover {
+    background-color: pink;
+}
+
+.messageCardImage {
+    width: 70px;
+    height: 70px;
+    margin-left: -10px;
+    border-radius: 50px;
+}
+
+.messageCardWording {
+    margin-left: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.messageCardName {
+    font-weight: bold;
+    margin-right: 20px;
+    color: black;
+}

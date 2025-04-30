@@ -51,25 +51,13 @@ const DashBoard = () => {
         }
     ]);
 
-    const [matches, setMatches] = useState([
-        {
-              id: 19,
-              name: "Amira",
-              classification: "Senior",
-              matchimage: sleepingdog,
-              bio: "Night owls unite! I do my best work after the sun goes down—midnight study jams, energy drinks, deep focus mode. If you’re tired of study groups that meet at 8 AM, I’m your late-night study buddy!",
-              interests: ["Star Gazing", "Writing", "DIY Projects", "Coffee Tasting"],
-              courses: ["Natural Language Processing", "Cybersecurity", "Big Data Analytics"],
-            }
-    ]);
-
-     const [confetti, setConfetti] = useState(false);
-        const [popupOpen, setPopupOpen] = useState(false);
-        const [popupMessage, setPopupMessage] = useState("")
-        const [currentRequest, setCurrentRequest] = useState(null);
-        const [windowSize, setWindowSize] = useState({ width: window.innerWidth, height: window.innerHeight });
-        const [requestUserPopupOpen, setRequestUserPopupOpen] = useState(false); // For the request user's card popup
-        const [selectedRequestUser, setSelectedRequestUser] = useState(null);
+    const [confetti, setConfetti] = useState(false);
+    const [popupOpen, setPopupOpen] = useState(false);
+    const [popupMessage, setPopupMessage] = useState("")
+    const [currentRequest, setCurrentRequest] = useState(null);
+    const [windowSize, setWindowSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+    const [requestUserPopupOpen, setRequestUserPopupOpen] = useState(false); // For the request user's card popup
+    const [selectedRequestUser, setSelectedRequestUser] = useState(null);
     
     useEffect(() => {
         const handleResize = () => {
@@ -79,7 +67,7 @@ const DashBoard = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const handleAccept = (id, name, classification) => {
+    const handleAccept = (id, name, classification, matchimage, courses) => {
         const request = requests.find(request => request.id === id);
         setRequests(requests.filter(request => request.id !== id));
         setConfetti(true);
@@ -88,7 +76,22 @@ const DashBoard = () => {
         setTimeout(() => {
             setConfetti(false);
         }, 3000);
-        /* implement actual accept later*/
+        
+        
+        // For mapping accepted requests to the chatpage
+        const acceptedUser = { id, name, matchimage, classification, courses };
+        const storedAcceptedMatches = localStorage.getItem('acceptedMatches');
+        let acceptedMatchesArray = storedAcceptedMatches ? JSON.parse(storedAcceptedMatches) : [];
+        const isAlreadyAccepted = acceptedMatchesArray.some(match => match.id === acceptedUser.id);
+        if (!isAlreadyAccepted) {
+            // Add the new accepted user to the array
+            acceptedMatchesArray = [...acceptedMatchesArray, acceptedUser];
+            console.log(acceptedMatchesArray);
+
+            // Store the updated array back in local storage
+            localStorage.setItem('acceptedMatches', JSON.stringify(acceptedMatchesArray));
+        }
+
 
     };
     
@@ -159,7 +162,7 @@ const DashBoard = () => {
                         className="dbMatchRequestItem">
                             <p className="dbMatchRequestUser" onClick={() => handleRequestClick(request)}>{request.name} - {request.classification}</p>
                             <div className="dbRequestButtons">
-                                <button className="acceptButton" onClick={() => handleAccept(request.id)}>Accept</button>
+                                <button className="acceptButton" onClick={() => handleAccept(request.id, request.name, request.classification, request.matchimage, request.courses)}>Accept</button>
                                 <button className="declineButton" onClick={() => handleDecline(request.id)}>Decline</button>
                             </div>
                         </div>

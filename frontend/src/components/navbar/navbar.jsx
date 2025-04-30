@@ -3,6 +3,7 @@ import "./navbar.css";
 import sblogo from "../../assets/sblogo.png";
 import profilepic from "../../assets/profilepic.png";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SignInPopup from "../signin/signin";
 import SignUpPopup from "../signup/signup";
 
@@ -11,6 +12,7 @@ import SignUpPopup from "../signup/signup";
 const NavBar = () => {
   const [showSignIn, setShowSignIn] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
+  const navigate = useNavigate();
 
   const [profilePicUrl, setProfilePicUrl] = useState(() => {
     return localStorage.getItem('accountSettingsData')
@@ -18,28 +20,20 @@ const NavBar = () => {
       : profilepic;
   });
 
-  // useEffect(() => {
-  //   const handleStorageChange = () => {
-  //     const storedData = localStorage.getItem('accountSettingsData');
-  //     if (storedData) {
-  //       const imageUrl = JSON.parse(storedData)?.profileImageUrl;
-  //       if (imageUrl) {
-  //         setProfilePicURl(imageUrl); // Corrected the typo here
-  //       } else {
-  //         setProfilePicURl(profilepic); // Corrected the typo here
-  //       }
-  //     } else {
-  //       setProfilePicURl(profilepic); // Corrected the typo here
-  //     }
-  //   };
+  const handleSignOut = () => {
+    const keysToRemove = Object.keys(localStorage).filter(key => key !== 'currentUser');
 
-  //   window.addEventListener('storage', handleStorageChange);
+    keysToRemove.forEach(key => {
+      localStorage.removeItem(key);
+    });
 
-  //   // Clean up the event listener on unmount
-  //   // return () => {
-  //   //   window.removeEventListener('storage', handleStorageChange);
-  //   // };
-  // }, []);
+    localStorage.removeItem('loggedInUser');
+
+    console.log('Signed out and local storage cleared (except currentUser).');
+    navigate('/'); // bring this back to the welcome page?
+  };
+
+
 
   useEffect(() => {
     const handleProfilePictureUpdate = () => {
@@ -71,22 +65,11 @@ const NavBar = () => {
         <div className="box">
           <Link to="/mymatches">MATCHES</Link>
         </div>
-        {/* <div className="box dropdown">
-          <strong>MATCHES</strong>
-          <div className="dropdown-content">
-            <div>
-              <Link to="/findmatches">Find Matches</Link>
-            </div>
-            <div>
-              <Link to="/requests">Requests</Link>
-            </div>
-            <div>
-              <Link to="/mymatches">My Matches</Link>
-            </div>
-          </div>
-        </div> */}
         <div className="box">
           <Link to="/resources">RESOURCES</Link>
+        </div>
+        <div className="box">
+          <Link to="/vibe">VIBE</Link>
         </div>
       </div>
 
@@ -105,6 +88,9 @@ const NavBar = () => {
           <div className="pfpdropdown-content">
             <div>
               <Link to="/accountsettings">Profile Settings</Link>
+            </div>
+            <div className="signoutContainer">
+              <button className="signoutButton"onClick={handleSignOut}>Sign Out</button>
             </div>
           </div>
         </div>

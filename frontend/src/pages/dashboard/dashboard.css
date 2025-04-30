@@ -50,7 +50,7 @@
     display: flex; /* use flex row*/
     flex-direction: column;
     gap: 10px;
-    justify-content: center;
+    margin-top: 50px;
     align-items: center;
     height: 88vh;
 }
@@ -220,15 +220,11 @@
 /* Match Requests Styling*/
 .dbMatchRequestItem {
     background-color: #fff;
-    /* padding: 10px; */
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 15px;
     display: flex;
-    /* grid-template-areas:
-    "user"
-    "buttons"; */
     grid-template-columns: 80% 20%;
     justify-content: space-between;
     align-items: center;
@@ -290,6 +286,15 @@
     border: none;
 }
 
+.reqspopup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 400px;
+}
+
 .reqspopupBox {
     background-color: #f5cac3;
     padding: 2rem;
@@ -302,6 +307,9 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    position: fixed;
+    left: 600px;
+    top: 200px;
 }
 
 .reqspopup-image {
@@ -353,6 +361,6 @@
 
 .request-user-popup-box {
     position: fixed;
-    top: 20vh;
-    left: 130vh;
+    right: 320px;
+    top: 200px;
 }
