@@ -3,6 +3,7 @@ import "./signup.css";
 import 'reactjs-popup/dist/index.css';
 import  {useNavigate} from 'react-router-dom';
 import axios from 'axios';
+import ReactDOM from 'react-dom';
 //Use React Portals for sign up
 
 
@@ -55,9 +56,9 @@ const SignUpPopup = ({ onClose }) => {
     }
   }
 
-    return (
-      <div className="supopup-overlay">
-        <div className="supopup-content">
+    return ReactDOM.createPortal(
+      <div className="supopup-overlay" style={{ zIndex: 1000 }}>
+        <div className="supopup-content"style={{ zIndex: 1001 }}>
           <button onClick={onClose} className="SignUpClose">Close</button>
           <div className="signupcontent">
             <h2 className="question">Want to find Study Buddies?</h2>
@@ -108,12 +109,13 @@ const SignUpPopup = ({ onClose }) => {
                   placeholder="Password" required 
                   />
 
-                 <button type="submit" className="SignUpLogin">Sign Up</button> {/*onClick={onClose}  */}
+                 <button type="submit" className="SignUpLogin">Sign Up</button>
 
               </form>
             </div>
         </div>
-      </div>
+      </div>,
+      document.getElementById('popup-root')
     );
   };
 

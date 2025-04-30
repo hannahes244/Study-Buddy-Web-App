@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./signin.css";
+import ReactDOM from 'react-dom';
 import 'reactjs-popup/dist/index.css';
 import  {useNavigate} from 'react-router-dom';
 import axios from 'axios';
@@ -41,30 +42,29 @@ const SignInPopup = ({ onClose }) => {
       
       }
     }
+    try{
+      const response = await axios.post(`${baseURL}/login/student`, inputs); // /student
 
-    // try{
-    //   const response = await axios.post(`${baseURL}/login/student`, inputs); // /student
-
-    //   if (response.status >= 200 && response.status < 300) {
-    //     const token = response.data.token;
-    //     localStorage.setItem('authToken', token);
+      if (response.status >= 200 && response.status < 300) {
+        const token = response.data.token;
+        localStorage.setItem('authToken', token);
 
 
-    //     console.log('Successful - Login Successful');
-    //     navigate('/dashboard');
-    //   }
-    //   else {
-    //     console.log('Sign In Failed!');
-    //   }
-    // } catch (error){
-    //   console.log('Login Failed Details', error);
-    // }
+        console.log('Successful - Login Successful');
+        navigate('/dashboard');
+      }
+      else {
+        console.log('Sign In Failed!');
+      }
+    } catch (error){
+      console.log('Login Failed Details', error);
+    }
 
   }
 
-    return (
-      <div className="sipopup-overlay">
-        <div className="sipopup-content">
+    return ReactDOM.createPortal(
+      <div className="sipopup-overlay"style={{ zIndex: 1000 }}>
+        <div className="sipopup-content"style={{ zIndex: 1001 }}>
           <button onClick={onClose} className="SignInClose">Close</button>
           <div className="signupcontent">
             <h2 className="question">Welcome Back!!</h2>
@@ -91,7 +91,8 @@ const SignInPopup = ({ onClose }) => {
               </form>
             </div>
         </div>
-      </div>
+      </div>,
+      document.getElementById('popup-root')
     );
   };
   
