@@ -13,6 +13,10 @@ import raccoonwsunglasses from "../../assets/acnhpfps/raccoonwsunglasses.jpeg";
 import sleepingdog from "../../assets/acnhpfps/sleepingdog.jpeg";
 import tomnook from "../../assets/acnhpfps/tomnook.jpeg";
 import yellowduck from "../../assets/acnhpfps/yellowduck.jpeg";
+import sittingcat from "../../assets/acnhpfps/sittingcat.jpeg";
+import sittingbear from "../../assets/acnhpfps/sittingbear.jpeg";
+import madsquirrel from "../../assets/acnhpfps/madsquirrel.jpeg";
+import goat from "../../assets/acnhpfps/goat.jpeg";
 
 
 
@@ -94,7 +98,7 @@ const MatchList = () => {
       id: 9,
       name: "Isabella",
       classification: "Sophomore",
-      matchimage: raccoon,
+      matchimage: goat,
       bio: "I'm the type who loves detailed study plans, cozy study sessions, and motivating each other through those tough midterms. If you’re into swapping notes, quiz games, and study playlists, we’ll vibe perfectly. Let's make studying feel a little less like a chore.",
       interests: ["Painting", "Baking", "Reading", "Animal Rescue"],
       courses: ["Discrete Structures", "Linear Algebra", "Computer Networking"],
@@ -103,7 +107,7 @@ const MatchList = () => {
       id: 10,
       name: "Noah",
       classification: "Senior",
-      matchimage: tomnook,
+      matchimage: sittingcat,
       bio: "I believe studying should be a team sport. I'm down for group study sessions, whiteboard brainstorming, and celebrating small wins along the way. If you need someone to help simplify complex ideas or just keep things moving, I'm your guy.",
       interests: ["Photography", "Basketball", "Fishing", "Cooking"],
       courses: ["Software Engineering", "Data Mining", "Systems Architecture"],
@@ -112,7 +116,7 @@ const MatchList = () => {
       id: 11,
       name: "Chloe",
       classification: "Freshman",
-      matchimage: duck,
+      matchimage: sittingbear,
       bio: "I'm here to find a buddy to navigate college life and classes with. Whether it's late-night study sessions, figuring out confusing assignments, or sharing memes during breaks, I’m all about building good vibes and better grades!",
       interests: ["Sewing", "Journaling", "Fashion Design", "Music"],
       courses: ["Intro to Computer Science", "English Composition", "College Algebra"],
@@ -130,7 +134,7 @@ const MatchList = () => {
       id: 13,
       name: "Lily",
       classification: "Senior",
-      matchimage: pig,
+      matchimage: sittingbear,
       bio: "I’m a big believer in active learning—talking through problems, teaching each other concepts, and constantly improving. If you're passionate about making study sessions fun, focused, and full of energy, let’s be study partners!",
       interests: ["Piano", "Creative Writing", "Camping", "Photography"],
       courses: ["Advanced Databases", "Cybersecurity", "Cloud Computing"],
@@ -157,7 +161,7 @@ const MatchList = () => {
       id: 16,
       name: "Grayson",
       classification: "Freshman",
-      matchimage: raccoonwsunglasses,
+      matchimage: sittingcat,
       bio: "Starting fresh in college and looking for someone who's as motivated (or at least as determined) as I am to stay on top of classes. Whether it’s group problem-solving or sharing survival tips for first-year students, I'm all in!",
       interests: ["Skateboarding", "Photography", "Hiking", "Podcasts"],
       courses: ["Intro to Programming", "Calculus I", "General Biology"],
@@ -184,7 +188,7 @@ const MatchList = () => {
       id: 19,
       name: "Amira",
       classification: "Senior",
-      matchimage: sleepingdog,
+      matchimage: goat,
       bio: "Night owls unite! I do my best work after the sun goes down—midnight study jams, energy drinks, deep focus mode. If you’re tired of study groups that meet at 8 AM, I’m your late-night study buddy!",
       interests: ["Star Gazing", "Writing", "DIY Projects", "Coffee Tasting"],
       courses: ["Natural Language Processing", "Cybersecurity", "Big Data Analytics"],
@@ -202,7 +206,7 @@ const MatchList = () => {
       id: 21,
       name: "Layla",
       classification: "Sophomore",
-      matchimage: cat,
+      matchimage: madsquirrel,
       bio: "Looking for a buddy who's serious about grades but understands that mental health comes first. I’m big on realistic schedules, stress management techniques, and study breaks that actually help you recharge. Let's ace our classes *and* take care of ourselves!",
       interests: ["Meditation", "Yoga", "Art", "Reading"],
       courses: ["Systems Architecture", "Software Engineering", "Discrete Math"],
@@ -229,7 +233,7 @@ const MatchList = () => {
       id: 24,
       name: "Zion",
       classification: "Senior",
-      matchimage: yellowduck,
+      matchimage: sittingcat,
       bio: "Big energy! I love leading study groups, organizing meetups, and making sure everyone feels included and motivated. If you need someone to keep the group on task *and* laughing, I'm your guy!",
       interests: ["Public Speaking", "Traveling", "Music Festivals", "Basketball"],
       courses: ["Cybersecurity", "Cloud Computing", "Project Management"],
@@ -238,7 +242,7 @@ const MatchList = () => {
       id: 25,
       name: "Sage",
       classification: "Sophomore",
-      matchimage: tomnook,
+      matchimage: sittingbear,
       bio: "Prefer studying remotely? Same here! I'm all about virtual study sessions, shared docs, and late-night Zoom calls. If you’re looking for a study partner who's reliable even from miles away, let's connect online and crush it.",
       interests: ["Gaming", "Blogging", "Photography", "Puzzles"],
       courses: ["Intro to Data Science", "Web Development", "Discrete Structures"],
@@ -265,13 +269,11 @@ const MatchList = () => {
       id: 28,
       name: "Dylan",
       classification: "Sophomore",
-      matchimage: cat,
+      matchimage: madsquirrel,
       bio: "Remote work warrior here! I’m all about Google Docs, shared notes, Discord study groups, and productivity apps. If you're looking for someone who knows how to stay connected and focused without needing to meet up, we’ll work great together!",
       interests: ["Technology", "Esports", "Graphic Design", "Reading"],
       courses: ["Systems Architecture", "Database Systems", "Cybersecurity"],
     },
-    
-    
     
     
   ]);

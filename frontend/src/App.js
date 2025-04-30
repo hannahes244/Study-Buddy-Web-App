@@ -10,6 +10,7 @@ import Vibe from "./pages/vibe/vibe";
 import Blog from "./pages/blog/blog";
 import About from "./pages/about/about";
 import Faq from "./pages/faq/faq"
+import Welcome from "./pages/welcome/welcome";
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Dashboard />} />  
+        <Route path="/" element={<Welcome />} />  
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/mymatches" element={<MyMatches />} />
